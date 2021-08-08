@@ -1,0 +1,6 @@
+#global{
+    display: grid;
+    grid-template-columns: 0.3fr 1.7fr;
+    grid-template-rows: 1fr;
+}
+
