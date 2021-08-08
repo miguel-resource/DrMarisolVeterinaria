@@ -60,5 +60,15 @@
 
 #header #nav ul li a{
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+/* Clase active */
+.active,
+.active a,
+.active i{
+    background-color: #4DABF7;
+    color: rgb(255, 255, 255) !important;
 }
 
