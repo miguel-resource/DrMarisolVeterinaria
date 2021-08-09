@@ -12,4 +12,5 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  telephone: string = '951 416 88 18';
 }

@@ -7,6 +7,7 @@
     height: 100%;
     position: fixed;
     padding: 20px;
+    box-shadow: 0px 6px 9px #ccc;
 }
 
 #header #logo {
@@ -36,6 +37,7 @@
     cursor: pointer;
     margin-bottom: 40px;
     border-radius: 20px;
+    
 }
 
 
@@ -46,6 +48,10 @@
     background-color: #4DABF7;
     color: #fff;
     transition:all 550ms;   
+}
+
+#header #nav ul li:hover{
+    box-shadow: 1px 1px 10px #ccc;
 }
 
 #header #nav ul li .icon{
