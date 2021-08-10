@@ -5,7 +5,9 @@ import { BlogComponent } from './blog/blog.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { LayoutComponent } from './layout/layout.component'
+import { LayoutComponent } from './layout/layout.component';
+
+import { AdminGuard } from './admin.guard';
 
 const routes:Routes = [
     { //DEFAULT
@@ -19,6 +21,7 @@ const routes:Routes = [
             },
             {
                 path: 'home',
+                canActivate: [ AdminGuard ],
                 //component: HomeComponent,
                 loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
             },
