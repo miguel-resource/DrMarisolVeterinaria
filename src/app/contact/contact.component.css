@@ -1,0 +1,28 @@
+#global-contacto{
+    display: grid;
+    grid-template-columns: 0.3fr 1.8fr;
+    grid-template-rows: 1fr;
+}
+
+#content-contact{
+    padding: 10px;
+}
+
+#inicio-contacto{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#inicio-contacto h2{
+    margin-bottom: 10px;
+}
+
+#inicio-contacto #inicio-text h2,
+#inicio-contacto #inicio-text div p{
+    margin: 0 auto;
+}
+
+#inicio-contacto #inicio-text p{
+    font-family: 'Montserrat', sans-serif;
+}
+

@@ -6,6 +6,8 @@ import { RouterModule } from '@angular/router';
 //compartidas. 
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+
+import { MaterialModule } from './../material/material.module';
 @NgModule({
   declarations: [
     FooterComponent,
@@ -18,6 +20,7 @@ import { HeaderComponent } from './components/header/header.component';
   imports: [
     CommonModule,
     RouterModule,
+    MaterialModule,
   ]
 })
 export class SharedModule { }

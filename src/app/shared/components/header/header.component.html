@@ -1,27 +1,35 @@
+
+
 <div id="header">
     <div id="logo">
         <div id="img-logo">
-            <img src="" alt="veterinaria">
+            <a routerLink="/home"><img src="./../../../../assets/img/logo.png" alt="v"></a>
         </div>
     </div>
 
-    <div id="nav">
-        <ul>
-            <li routerLink="/home"  routerLinkActive="active">
-                <i class="fas fa-paw icon"></i>
-                <a >Home</a>
-            </li>
-            <li routerLink="/blog"  routerLinkActive="active">
-                <i class="fas fa-notes-medical icon"></i>
-                <a >Blog</a></li>
-            <li routerLink="/about"  routerLinkActive="active">
-                <i class="fas fa-syringe icon"></i>
-                <a  >About</a>
-            </li>
-            <li routerLink="/contact" routerLinkActive="active">
-                <i class="fas fa-address-book icon"></i>
-                <a  >Contacto</a>
-            </li>
-        </ul>
-    </div>
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <div id="nav">
+                <ul>
+                    <li  mat-button routerLink="/home"  routerLinkActive="active">
+                        <i class="fas fa-paw icon"></i>
+                        <a >Inicio</a>
+                    </li>
+                    <li mat-button routerLink="/blog"  routerLinkActive="active">
+                        <i class="fas fa-notes-medical icon"></i>
+                        <a >Blog</a></li>
+                    <li   mat-button routerLink="/about"  routerLinkActive="active">
+                        <i class="fas fa-syringe icon"></i>
+                        <a  >Nosotros</a>
+                    </li>
+                    <li  mat-button routerLink="/contact" routerLinkActive="active">
+                        <i class="fas fa-address-book icon"></i>
+                        <a  >Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    
 </div>
