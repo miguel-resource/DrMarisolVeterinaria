@@ -8,6 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 
 import { MaterialModule } from './../material/material.module';
+import { ContactModule } from '../contact/contact.module';
+
 @NgModule({
   declarations: [
     FooterComponent,
@@ -16,6 +18,7 @@ import { MaterialModule } from './../material/material.module';
   exports:[
     FooterComponent,
     HeaderComponent,
+    ContactModule
   ],
   imports: [
     CommonModule,

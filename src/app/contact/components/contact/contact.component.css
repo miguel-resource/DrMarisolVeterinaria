@@ -1,0 +1,107 @@
+#global-contacto{
+    display: grid;
+    grid-template-columns: 0.3fr 1.8fr;
+    grid-template-rows: 1fr;
+}
+
+#content-contact{
+    padding: 10px;
+    margin-left: 0%;
+}
+
+#inicio-contacto{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    box-shadow: 0px 2px 7px #ccc;
+}
+
+#inicio-contacto #inicio-text h2{
+    margin-top: 10px !important;
+    margin-left: 16px !important;
+}
+
+
+
+#inicio-contacto #social-buttons{
+    margin-top: 3px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+#inicio-contacto #social-buttons  ul li{
+    float: left;
+    margin: 20px;
+    width: 60px;
+    border : 2px solid #ccc;
+    height: autoj;
+    border-radius: 20px;
+    text-align: center;
+    padding: 5px;
+}
+
+#inicio-contacto #social-buttons ul li:hover{
+    cursor: pointer;
+    transition: all 500ms;
+    border: 2px solid #ccc;
+    transform: scale(0.9);
+}
+
+#inicio-contacto #social-buttons ul .social-what:hover a{
+    color: green;
+}
+
+#inicio-contacto #social-buttons ul .social-insta:hover a{
+    color:#B4187F;
+}
+
+#inicio-contacto #social-buttons ul .social-face:hover a{
+    color: #2D88FF;
+}
+
+#inicio-contacto #social-buttons ul li i{
+    display: block;
+    margin:0 auto;
+    line-height: 38px;
+    font-size: 30px;
+    text-decoration: none;
+    line-height: 30px;
+}
+
+#inicio-contacto #social-buttons ul li a{
+    color: #ccc;
+    text-decoration: none;
+}
+
+#inicio-contacto #inicio-text h2,
+#inicio-contacto #inicio-text div p{
+    margin: 0 auto;
+}
+
+
+#inicio-contacto #inicio-text p{
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    margin-top: 17px !important;
+    padding-left: 24px;
+}
+
+#img-contacto {
+    width: 100%;
+    height: 300px;
+}
+
+#img-contacto img{ 
+    display: block;
+    width: 48%;
+    margin: 0 auto;
+}
+
+/*
+    FORMULARIO
+*/
+#form-contact{
+    box-shadow: 0px 2px 7px #ccc;
+    margin-top: 10px;
+}
+
+

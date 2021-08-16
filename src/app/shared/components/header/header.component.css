@@ -3,7 +3,7 @@
 }
 
 #header{
-    width:11%;
+    width:14.5%;
     height: 100%;
     position: fixed;
     padding: 20px;
@@ -69,7 +69,7 @@
 }
 
 #header #nav ul li .icon{
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 #header #nav ul li a,
