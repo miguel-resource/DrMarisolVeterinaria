@@ -102,6 +102,46 @@
 #form-contact{
     box-shadow: 0px 2px 7px #ccc;
     margin-top: 10px;
+    background: #060c23 !important;
+    color: #fff;
 }
 
+#form-contact{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 0.8fr 1.1fr;
+}
 
+#form-contact #form-send{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 13%;
+    padding-top:0px;
+}
+
+#form-contact #form-send h3{
+    font-size: 35px;
+    text-align: center;
+}
+
+#form-contact #form-send mat-label{
+    font-size: 16px;
+    color: #fff;
+}
+
+#form-contact #form-send mat-form-field input, textarea{
+    color: #4DABF7;
+}
+
+::placeholder{
+    color: #ccc;
+}
+
+#form-contact #form-send button{
+    margin: 0 auto;
+    background-color: #4DABF7;
+}
+
+#form-contact #form-send button:hover{
+    background-color: #7ebef3;
+}

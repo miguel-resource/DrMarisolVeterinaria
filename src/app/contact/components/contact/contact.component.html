@@ -5,6 +5,7 @@
         
     </div>
 
+
     <div id="content-contact">
         
         <div id="inicio-contacto">
@@ -32,7 +33,41 @@
         </div>
 
         <div id="form-contact">
-            <h2>Hola</h2>
+            <div id="form-send">
+                <h3>Formulario</h3>
+                <mat-form-field appearance="fill">
+                    <mat-label>Nombre</mat-label>
+                    <input matInput required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Introducce tu correo electrónico</mat-label>
+                    <input matInput placeholder="mimascota@example.com" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Mensaje</mat-label>
+                    <textarea matInput required></textarea>
+                </mat-form-field>
+                <button mat-fab color="primary" >
+                    <mat-icon>send</mat-icon>
+                </button>
+            </div>
+
+            <div id="text-contact">
+                <div id="title-contact">
+                    <h3>¿Necesitas una cotización o una cita?</h3>
+                </div>
+                <div id="sub-contact">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                        Omnis, labore. Consequuntur nam iusto accusantium libero adipisci quos id odit magni dicta aperiam quae voluptatibus 
+                        exercitationem accusamus, itaque ut vero quisquam!
+                    </p>
+                </div>
+            </div>
+
+            
+            
         </div>
     </div>
 </div>

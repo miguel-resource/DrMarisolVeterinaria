@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { FormContactComponent } from './components/form-contact/form-contact.component';
 import { NavComponent } from './components/nav/nav.component';
+import { PostsListComponent } from './components/posts-list/posts-list.component';
 
 const routes: Routes = [
   {
@@ -12,6 +13,10 @@ const routes: Routes = [
   {
     path: '',
     component: NavComponent
+  },
+  {
+    path: 'posts',
+    component: PostsListComponent
   }
 ]; 
 
