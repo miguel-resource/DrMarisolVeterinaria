@@ -10,7 +10,7 @@ import { PostsService } from 'src/app/core/service/posts/posts.service';
 export class PostsListComponent implements OnInit {
 
   posts: any;
-  displayedColumns: string[] = ['id', 'titulo', 'contenido', 'acciones']
+  displayedColumns: string[] = ['id', 'title', 'content', 'actions']
 
   constructor(
     private postsService: PostsService,
@@ -26,6 +26,17 @@ export class PostsListComponent implements OnInit {
       this.posts = data;
       console.log(this.posts);
     })
+  }
+
+  deletePost(id:string){
+    if(confirm("¿Estás segur@ que deseas borrar este post?")){
+      this.postsService.deleteInfo(id)
+      .subscribe(item => {
+        console.log("Se ha borrado"+item);
+        this.fetchAllPosts();
+      });
+    }
+    
   }
 
 }

@@ -8,18 +8,25 @@ import {FormControl, Validators} from '@angular/forms';
 })
 export class ContactComponent implements OnInit {
 
-  constructor() { }
+  emailField: FormControl;
+
+  constructor() {
+    this.emailField = new FormControl('', [Validators.required, Validators.email]);
+    this.emailField.valueChanges
+    .subscribe(value => {
+      console.log(value);
+    })
+  }
 
   ngOnInit(): void {
   }
 
-  email = new FormControl('', [Validators.required, Validators.email]);
 
   getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
+    if (this.emailField.hasError('required')) {
+      return 'Debes ingresar el correoz';
     }
-    return this.email.hasError('email') ? 'Email inválido' : '';
+    return this.emailField.hasError('email') ? 'Email inválido' : '';
   }
 
 }

@@ -41,14 +41,14 @@
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Introducce tu correo electrónico</mat-label>
-                    <input matInput placeholder="mimascota@example.com" required>
-                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    <input [formControl]="emailField" matInput placeholder="kitty@example.com" required>
+                    <mat-error  *ngIf="emailField.invalid">{{getErrorMessage()}}</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Mensaje</mat-label>
                     <textarea matInput required></textarea>
                 </mat-form-field>
-                <button mat-fab color="primary" >
+                <button mat-fab [disabled]="emailField.invalid" color="primary" >
                     <mat-icon>send</mat-icon>
                 </button>
             </div>
