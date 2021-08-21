@@ -124,6 +124,10 @@
     text-align: center;
 }
 
+#form-contact #form-send mat-form-field{
+    margin-top: 6px;
+}
+
 #form-contact #form-send mat-label{
     font-size: 16px;
     color: #fff;
@@ -144,4 +148,40 @@
 
 #form-contact #form-send button:hover{
     background-color: #7ebef3;
+}
+
+/* 
+    CONTACTO TEXTO
+*/
+
+#text-contact #title-contact{
+    width: 100%;
+    margin: 0 auto;
+}
+
+#title-contact h3{
+    font-size: 38px;
+    font-weight: bold;
+}
+
+#text-contact #sub-contact{
+    width: 98%;
+    margin: 0 auto;
+}
+
+#sub-contact ul{
+    margin-top: 30px;
+}
+
+#sub-contact ul li{
+    text-align: left;
+}
+
+
+#sub-contact ul li i{
+    margin-left: 10px;
+}
+
+#sub-contact ul li span{
+    margin-left: 1%;
 }

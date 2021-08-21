@@ -37,18 +37,20 @@
                 <h3>Formulario</h3>
                 <mat-form-field appearance="fill">
                     <mat-label>Nombre</mat-label>
-                    <input matInput required>
+                    <input matInput [formControl]="nameField" required>
+                    <mat-error  *ngIf="nameField.invalid">{{getNameErrorMessage()}}</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="fill">
-                    <mat-label>Introducce tu correo electrónico</mat-label>
+                    <mat-label>Correo electrónico</mat-label>
                     <input [formControl]="emailField" matInput placeholder="kitty@example.com" required>
-                    <mat-error  *ngIf="emailField.invalid">{{getErrorMessage()}}</mat-error>
+                    <mat-error  *ngIf="emailField.invalid">{{getEmailErrorMessage()}}</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Mensaje</mat-label>
-                    <textarea matInput required></textarea>
+                    <textarea matInput [formControl]="textAreaField" required></textarea>
+                    <mat-error  *ngIf="textAreaField.invalid">{{getTextsErrorMessage()}}</mat-error>
                 </mat-form-field>
-                <button mat-fab [disabled]="emailField.invalid" color="primary" >
+                <button mat-fab [disabled]="emailField.invalid || textAreaField.invalid || nameField.invalid" color="primary" >
                     <mat-icon>send</mat-icon>
                 </button>
             </div>
@@ -59,10 +61,15 @@
                 </div>
                 <div id="sub-contact">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                        Omnis, labore. Consequuntur nam iusto accusantium libero adipisci quos id odit magni dicta aperiam quae voluptatibus 
-                        exercitationem accusamus, itaque ut vero quisquam!
+                        Únicamente damos consulta de manera presencial pero puedes enviarnos un correo y preguntar 
+                        por algún servicio o productos, estamos para servirte
                     </p>
+
+                    <ul>
+                        <li><i class="fas fa-home"></i><span>Libres 801, Jalatlaco, Oaxaca de Juárez México.</span></li>
+                        <li><i class="fas fa-mobile-alt"></i><span> 951 416 88 18</span></li>
+                        <li><i class="fas fa-envelope"></i><span>marisol@gmail.com</span></li>
+                    </ul>
                 </div>
             </div>
 

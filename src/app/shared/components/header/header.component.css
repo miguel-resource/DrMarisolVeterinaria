@@ -46,7 +46,7 @@
     list-style: none;    
     width: 100%;
     height: 30px;
-    line-height: 30px;
+    line-height: 27px;
     padding-left: 10px;
     cursor: pointer;
     margin-bottom: 40px;
@@ -56,12 +56,15 @@
 
 
 
-#header #nav ul li:hover,
-#header #nav ul li:hover i,
-#header #nav ul li:hover a{
+#header #nav ul li:hover{
     background-color: #4DABF7;
     color: #fff;
     transition:all 550ms;   
+}
+
+#header #nav ul li:hover a,
+#header #nav ul li:hover i{
+    color: #fff;
 }
 
 #header #nav ul li:hover{
