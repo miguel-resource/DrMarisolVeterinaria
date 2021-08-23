@@ -1,4 +1,4 @@
-<table mat-table class="mat-elevation-z8">
+<table mat-table [dataSource]=posts class="mat-elevation-z8">
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> ID </th>
         <td mat-cell *matCellDef="let post"> {{post.id}} </td>
@@ -17,7 +17,7 @@
     <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef> Acciones </th>
         <td mat-cell *matCellDef="let post">
-            <button mat-button>Editar</button>
+            <a mat-button [routerLink]= "['edit', post.id]">Editar</a>
             <button  mat-flat-button color="warn" (click)="deletePost(post.id)">Borrar</button>
         </td>
     </ng-container>

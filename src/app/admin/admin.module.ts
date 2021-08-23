@@ -9,13 +9,15 @@ import { NavComponent } from './components/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
 import { FormPostsComponent } from './components/form-posts/form-posts.component';
+import { PostEditComponent } from './components/post-edit/post-edit.component';
 
 
 @NgModule({
   declarations: [
     NavComponent,
     PostsListComponent,
-    FormPostsComponent
+    FormPostsComponent,
+    PostEditComponent
   ],
   imports: [
     CommonModule,

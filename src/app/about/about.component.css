@@ -1,5 +1,9 @@
 #global-about{
     display: grid;
     grid-template-columns: 0.3fr 1.7fr;
-    
+}
+
+h2{ 
+    width: 99%;
+    padding-bottom: 13px;
 }
