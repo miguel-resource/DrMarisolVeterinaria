@@ -1,0 +1,48 @@
+#global-about{
+    display: grid;
+    grid-template-columns: 0.3fr 1.7fr; 
+}
+
+h2{ 
+    width: 99%;
+    padding-bottom: 13px;
+}
+
+#inicio-about{ 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width:  95%;    
+    padding: 10px;
+}
+
+#inicio-about #text-about{
+    padding-left: 1%;
+}
+
+#text-about p{
+    font-size: 23px;
+    padding-left: 10px;
+    line-height: 38px;
+}
+
+#text-about p span{
+    color: blue;    
+}
+
+#img-about{
+    padding: 18px;  
+}
+
+#img-about img{
+    width: 90%;
+}
+
+/*------------------------------
+SWIPER
+----------------------------------*/
+
+.swiper {
+    width: 600px;
+    height: 300px;
+}
+  

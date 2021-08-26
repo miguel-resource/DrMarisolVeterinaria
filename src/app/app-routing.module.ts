@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules} from '@angular/router';
 
 import { BlogComponent } from './blog/blog.component';
-import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LayoutComponent } from './layout/layout.component';
 
@@ -34,7 +33,7 @@ const routes:Routes = [
             },
             {
                 path: 'about',
-                component: AboutComponent,
+                loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
             }
         ]
     },

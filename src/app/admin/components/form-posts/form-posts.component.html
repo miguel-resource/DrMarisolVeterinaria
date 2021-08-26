@@ -1,0 +1,44 @@
+<form [formGroup]="form" (ngSubmit)="savePost($event)">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>Publicaciones</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row">
+                <div class="col-xd"> 
+                    <mat-form-field appearance="fill"> 
+                        <mat-label>ID</mat-label>
+                        <input formControlName="id" matInput type="number">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xd">
+                    <mat-form-field appearance="fill"> 
+                        <mat-label>Título del post</mat-label>
+                        <input formControlName="title" matInput type="text">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xd">
+                    <mat-form-field appearance="fill"> 
+                        <mat-label>Contenido</mat-label>
+                        <textarea  formControlName="description" matInput type="text"></textarea>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xd">
+                    <mat-form-field appearance="fill"> 
+                        <img *ngIf="(image$ | async) as image" [src]="image" alt="">
+                        <input formControlName="img" matInput type="file" (change)="uploadFile($event)">
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button type="submit">Guardar</button>
+        </mat-card-actions>
+    </mat-card>
+</form>

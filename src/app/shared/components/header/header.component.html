@@ -3,33 +3,30 @@
 <div id="header">
     <div id="logo">
         <div id="img-logo">
-            <a routerLink="/home"><img src="./../../../../assets/img/logo.png" alt="v"></a>
+            <a routerLink="/home"><img src="./../../../../assets/img/logo-principal.png" alt="v"></a>
         </div>
     </div>
 
-    <mat-toolbar>
-        <mat-toolbar-row>
-            <mat-nav-list id="nav">
-                <ul>
-                    <li  mat-button routerLink="/home"  routerLinkActive="active">
-                        <i class="fas fa-paw icon"></i>
-                        <a >Inicio</a>
-                    </li>
-                    <li mat-button routerLink="/blog"  routerLinkActive="active">
-                        <i class="fas fa-notes-medical icon"></i>
-                        <a >Blog</a></li>
-                    <li   mat-button routerLink="/about"  routerLinkActive="active">
-                        <i class="fas fa-syringe icon"></i>
-                        <a  >Nosotros</a>
-                    </li>
-                    <li  mat-button routerLink="/contact" routerLinkActive="active">
-                        <i class="fas fa-address-book icon"></i>
-                        <a  >Contacto</a>
-                    </li>
-                </ul>
-            </mat-nav-list>
-        </mat-toolbar-row>
-    </mat-toolbar>
+
+    <div id="nav">
+        <ul>
+            <li  mat-button routerLink="/home"  routerLinkActive="active">
+                <i class="fas fa-paw icon"></i>
+                <a >Inicio</a>
+            </li>
+            <li mat-button routerLink="/blog"  routerLinkActive="active">
+                <i class="fas fa-notes-medical icon"></i>
+                <a >Blog</a></li>
+            <li   mat-button routerLink="/about"  routerLinkActive="active">
+                <i class="fas fa-syringe icon"></i>
+                <a  >Nosotros</a>
+            </li>
+            <li  mat-button routerLink="/contact" routerLinkActive="active">
+                <i class="fas fa-address-book icon"></i>
+                <a  >Contacto</a>
+            </li>
+        </ul>
+    </div>
 
     
 </div>
