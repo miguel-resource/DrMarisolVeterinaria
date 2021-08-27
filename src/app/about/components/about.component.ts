@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SwiperModule } from 'swiper/angular';
 import SwiperCore, { Navigation, Pagination, A11y } from 'swiper';
-import { MaterialModule } from './../material/material.module';
+
 
 SwiperCore.use([
   Navigation,

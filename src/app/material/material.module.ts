@@ -44,4 +44,8 @@ import { MatTableModule } from '@angular/material/table';
     MatTableModule
   ]
 })
-export class MaterialModule { }
+export class MaterialModule {
+  static use(arg0: string[]) {
+    throw new Error('Method not implemented.');
+  }
+}

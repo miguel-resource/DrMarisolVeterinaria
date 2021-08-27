@@ -41,8 +41,23 @@ h2{
 SWIPER
 ----------------------------------*/
 
-.swiper {
-    width: 600px;
-    height: 300px;
+swiper {
+    width: 900px;
+    height: 220px;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
-  
+
+swiper ng-template{
+    height: 800px;
+}
+
+.card{
+    height: 180px !important;
+    width: 86%;
+    margin: 0 auto;
+}
+
+.card-header div i{
+    font-size:20px;
+}
