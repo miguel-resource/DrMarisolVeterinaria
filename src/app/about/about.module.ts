@@ -6,7 +6,6 @@ import { AboutComponent } from './components/about.component';
 import { AboutRoutingModule } from './about-routing.module';
 import { MaterialModule } from '../material/material.module';
 import { SwiperModule } from 'swiper/angular';
-
 @NgModule({
     declarations: [
         AboutComponent,
@@ -17,7 +16,7 @@ import { SwiperModule } from 'swiper/angular';
         MaterialModule,
         FormsModule,
         ReactiveFormsModule,
-        SwiperModule
+        SwiperModule,
     ]
 })
 export class AboutModule{}

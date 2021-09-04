@@ -14,7 +14,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from 'src/environments/environment';
-import Swiper from 'swiper';
+import { gsap } from 'gsap';
+import { MotionPathPlugin } from 'gsap/all';
 
 
 @NgModule({

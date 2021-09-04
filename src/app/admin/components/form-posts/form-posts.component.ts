@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { PostsService } from 'src/app/core/service/posts/posts.service';
 import { MyValidators } from 'src/app/utils/validators';
 import { AngularFireStorage } from '@angular/fire/storage';
+import { AngularFireAuth } from '@angular/fire/auth';
 import { finalize } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 
@@ -23,7 +24,7 @@ export class FormPostsComponent implements OnInit {
     private postsService: PostsService,
     private router: Router,
     private storage: AngularFireStorage
-  ) { 
+  ) {
     this.form = this.formBuilder.group({
       id: ['', [Validators.required, MyValidators.isPriceValid]],
       title: ['', [Validators.required, Validators.minLength(30) ]],
