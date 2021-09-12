@@ -1,14 +1,68 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from './../../../core/service/posts/posts.service'
+import SwiperCore, { Parallax, Pagination, Navigation, A11y } from "swiper";
+import { Slider, CardHome } from './home.model';
+
+
+SwiperCore.use([
+  Navigation,
+  Pagination,
+  A11y,
+])
 
 @Component({
   selector: 'app-home',
   templateUrl: '../home/home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
 
   products = [];
+
+  sliders: Slider[] = [
+    {
+      title: 'Prueba 1',
+      content: 'Somos una empresa dedicada a la salud de tus mascotas',
+      backgroud: '',
+      url: 'askdjaslkdjaskldjsa'
+    },
+    {
+      title: 'Prueba 2',
+      content: 'Somos una empresa dedicada a la salud de tus mascotas',
+      backgroud: '',
+      url: ''
+    },
+    {
+      title: 'Prueba 3',
+      content: 'Somos una empresa dedicada a la salud de tus mascotas',
+      backgroud: '',
+      url: ''
+    },
+  ];
+
+  cards: CardHome[] = [
+    {
+      title: 'cotización',
+      content: "Cotiza con nosotros algunos de nuestros servicios o productos a través de nuestro formulario en la sección de ",
+      highlith: 'contacto',
+      url: '',
+      icon: 'fab fa-wpforms'
+    },
+    {
+      title: 'blog',
+      content: 'Checa nuestros tips y recomendaciones para el cuidado y mantenimiento de tus pequeños amigos en nuestra sección de ',
+      highlith: 'blog',
+      url: '',
+      icon: 'fas fa-blog'
+    },
+    {
+      title: 'servicios',
+      content: 'Puedes ver nuestras principales servicios que ofrecemos, además de nuestros principales proveedores en nuestra sección de ',
+      highlith: 'nosotros',
+      url: '',
+      icon: 'fas fa-concierge-bell'
+    }
+  ];
 
   constructor(
     private postsService: PostsService,
@@ -19,15 +73,13 @@ export class HomeComponent implements OnInit {
     this.fetchInfo('2');
   }
 
-  fetchAllInfo(){
 
+  fetchAllInfo(){
     this.postsService.getAllInfo()
       .subscribe(posts => {
         console.log(posts);
       });
-
   }
-
 
   fetchInfo(id:string){
     this.postsService.getInfo(id)
@@ -70,5 +122,5 @@ export class HomeComponent implements OnInit {
       console.log(post);
     })
   }
-  
+
 }

@@ -1,10 +1,60 @@
 <div id="global">
-    <div id="header">
+  <div id="header">
+  </div>
+
+  <div id="content-home">
+    <!--
+      SLIDER
+    -->
+    <div id="home-slider">
+      <swiper  [slidesPerView]="1" [spaceBetween]="30" [navigation]="true" [pagination]="{ clickable: true }">
+        <ng-template class="swiper-slide" swiperSlide *ngFor="let slider of sliders" style="background-image: url('{{ slider.background }}');">
+          <div class="title">{{ slider.title }}</div>
+          <div class="content">{{ slider.content }}</div>
+          <button *ngIf="slider.url.length > 0" class="btn btn-"mat-raised-button routerLink="post/{{ slider.url }}">LINK</button>
+        </ng-template>
+      </swiper>
     </div>
-    <div id="content-home">
-        <app-banner></app-banner>
-        <button (click)="postInfo()">Crear</button> <br>
-        <button (click)="updateInfo()">Actualizar información</button> <br>
-        <button (click)="deleteInfo()">Borrar</button>
+
+    <!--
+      Puntos de la página
+    -->
+    <div id="cards-intro">
+      <div class="card" *ngFor="let card of cards" >
+        <mat-card>
+          <mat-card-header>
+            <div mat-card-avatar class="icon-card">
+              <i class="{{ card.icon }}"></i>
+            </div>
+            <mat-card-title>{{card.title | uppercase }}</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>{{card.content}} <span>{{card.highlith}}.</span></p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button>Ir a...</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
     </div>
+    
+
+    <!--
+      INTRODDCIÓN
+    -->
+    
+    <!--
+      Ubication
+    -->
+
+    <!--
+      FILOSOFÍA DE LA EMPRESA
+      -->
+
+    <!--
+
+          MASCOTAS QUE TRATAMOS, ETC
+
+        -->
+  </div>
 </div>

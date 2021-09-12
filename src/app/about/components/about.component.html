@@ -12,9 +12,10 @@
         </p>
       </div>
       <div id="img-about">
-        <img src="./../../assets/img/about-img.png" alt="veterinariaImg">
+        <img src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/about-img.png?alt=media&token=ef9c30cb-a193-49e5-8469-a22e0baf63c8"  alt="veterinariaImg">
       </div>
     </div>
+
     <div id="service-about">
       <h3 class="title-principal">Servicios</h3>
       <!--SLIDER DE LOS PRINCIPALES SERVICIOS-->
@@ -24,7 +25,7 @@
           <mat-card class="card">
             <mat-card-header>
               <div class="mat-car-ido" mat-card-avatar><i class="fas fa-{{ service.icon }}"></i></div>
-              <mat-card-title>{{ service.name }}</mat-card-title>
+              <mat-card-title>{{ service.name | uppercase }}</mat-card-title>
             </mat-card-header>
             <mat-card-content>
               <p>{{ service.content }}</p>
@@ -39,7 +40,7 @@
       <h3 class="title-principal">Principales proveedores</h3>
       <div id="cards-vendors">
         <div class="card-vendor" *ngFor="let vendor of vendors">
-          <img src="./../../../assets/img/marcas/logo-{{vendor}}.png" alt="{{vendor}}">
+          <img src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/{{vendor.url}}" alt="{{vendor.title}}">
         </div>
       </div>
     </div>

@@ -6,11 +6,13 @@ import { HomeComponent } from './components/home/home.component';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from './../shared/shared.module';
+import { SwiperModule } from 'swiper/angular';
+
 
 //Importar librerías
 import { MaterialModule } from '../material/material.module';
 @NgModule({
-    declarations: [ 
+    declarations: [
         HomeComponent,
         BannerComponent
     ],
@@ -19,8 +21,9 @@ import { MaterialModule } from '../material/material.module';
         CommonModule,
         SharedModule,
         MaterialModule,
+        SwiperModule
     ]
 })
-export class HomeModule{ 
+export class HomeModule{
 
 }

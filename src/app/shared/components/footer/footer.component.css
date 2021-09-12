@@ -9,7 +9,7 @@ Estilo global para el footer
 
 #global-footer{
     margin-left: 14.5%;
-    width: 85.9%;
+    width: 85%;
     padding: 20px;
     background: #ccc;
     box-shadow: 0 0 20px #ccc;
@@ -112,7 +112,7 @@ Estilo para la sección Ubicación del footer
     color: #4DABF7;
 }
 
-#ubication p{ 
+#ubication p{
     font-family: 'Montserrat', sans-serif;
     font-size: 12px;
 }
