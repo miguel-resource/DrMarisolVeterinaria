@@ -28,7 +28,7 @@
 */
 
 #cards-intro{
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -37,8 +37,57 @@
   margin-bottom: 10px;
 }
 
+mat-card {
+  border-radius: 7%;
+  height: 100%;
+  padding-bottom: 20px;
+}
+
+.icon-card i {
+  background-color: #5C98FB;
+  border-radius: 30px;
+  color: #fff;
+  display: block;
+  height: 27px;
+  line-height: 27px;
+  text-align: center;
+}
+
+mat-card-content {
+  height: 61% !important;
+}
+
+mat-card-content span { 
+  font-weight: bold;
+  color: black;
+}
+
 #cards-intro .card{
-  border-radius: 10%;
+  border-radius: 7%;
   border: 1px solid #b1d2e8;
   box-shadow: 0px 0px 30px #ccc;
 }
+
+button {  
+  background-color: #5C98FB;
+}
+
+.card button  {
+  color: #fff;
+  font-size: 17px;
+  margin-left: 38% !important;
+  margin-top: -5px;
+  transition: 0.5s all;
+}
+
+.card button:hover { 
+  transform: scale(1.2)
+}
+
+#introduction {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 90%;
+}
+
+
