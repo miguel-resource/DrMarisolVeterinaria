@@ -32,7 +32,7 @@
             <p>{{card.content}} <span>{{card.highlith}}.</span></p>
           </mat-card-content>
           <mat-card-actions>
-            <button mat-raised-button><i class="fas fa-link"></i></button>
+            <button mat-raised-button routerLink="{{ card.url }}"><i class="fas fa-link"></i></button>
           </mat-card-actions>
         </mat-card>
       </div>
@@ -47,22 +47,47 @@
         <mat-tab>
           <ng-template mat-tab-label>
             <mat-icon class="tab-icon"><i class="fas fa-first-aid"></i></mat-icon>
-  
           </ng-template>
-          Contenido1
+          
+          <div class="tab-content">
+            <div class="tab-text">
+              <p>
+                En la <span>Veterinaria Dra. Marisol</span> ofrecemos una atención especializada para tu mascota, 
+                contamos con los mejores epecialistas y ofrecemos una servicio de principio a fin para que
+                cada uno de nuestros pequeños amigos se vaya seguro a casa.
+              </p>
+            </div>
+            <img src="https://cdn.pixabay.com/photo/2020/03/26/10/35/domestic-cat-4969984_960_720.jpg" alt="atención veterinaria">
+            
+          </div>
         </mat-tab>
         
-      <mat-tab>
+        <mat-tab>
           <ng-template mat-tab-label>
             <mat-icon class="tab-icon"><i class="fas fa-map-marked-alt"></i></mat-icon>
-            Ejemplo1
-          Contenido1
+          </ng-template>
+          <div class="tab-content">
+            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" 
+            src="https://maps.google.com/maps?width=1254&amp;height=400&amp;hl=en&amp;q=Libres%20801%20Oaxaca%20
+            City+(Veterinaria%20Dra.%20Marisol)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+          </div>
         </mat-tab>
-      </mat-tab-group>
+        <mat-tab>
+          <ng-template mat-tab-label>
+            <mat-icon class="tab-icon"><i class="fas fa-images"></i></mat-icon>
+          </ng-template>
+          <div class="tab-content">
+
+          </div>
+        </mat-tab>
+       </mat-tab-group>
       
     </div>
     
-    Ubication -->
+    
+    <!--
+      Ubication
+    -->
 
     <!--
 

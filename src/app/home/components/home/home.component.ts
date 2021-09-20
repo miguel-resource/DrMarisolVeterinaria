@@ -45,21 +45,21 @@ export class HomeComponent implements OnInit {
       title: 'cotización',
       content: "Cotiza con nosotros algunos de nuestros servicios o productos a través de nuestro formulario en la sección de ",
       highlith: 'contacto',
-      url: '',
+      url: '/contact',
       icon: 'fab fa-wpforms'
     },
     {
       title: 'blog',
       content: 'Checa nuestros tips y recomendaciones para el cuidado y mantenimiento de tus pequeños amigos en nuestra sección de ',
       highlith: 'blog',
-      url: '',
+      url: '/blog',
       icon: 'fas fa-blog'
     },
     {
       title: 'servicios',
       content: 'Puedes ver nuestras principales servicios que ofrecemos, además de nuestros principales proveedores en nuestra sección de ',
       highlith: 'nosotros',
-      url: '',
+      url: '/about',
       icon: 'fas fa-concierge-bell'
     }
   ];

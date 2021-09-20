@@ -80,14 +80,39 @@ button {
   transition: 0.5s all;
 }
 
+.card button a {
+  color: #fff;
+}
+
 .card button:hover { 
   transform: scale(1.2)
 }
 
+/*
+ INTRODDCIÓN
+*/
+
 #introduction {
   margin: 0 auto;
   margin-top: 20px;
+  margin-bottom: 20px;
   width: 90%;
 }
+
+.tab-content {
+  margin: 0 auto;
+  padding: 20px;
+  width: 92%;
+}
+
+.tab-content iframe {
+  height: 350px;
+  width: 100%;
+}
+
+
+
+
+
 
 
