@@ -85,6 +85,8 @@
 #header #nav ul li a{
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    line-height: 30px;
 }
 
 /* Clase active */

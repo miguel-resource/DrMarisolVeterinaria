@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from './../../../core/service/posts/posts.service'
-import SwiperCore, { Parallax, Pagination, Navigation, A11y } from "swiper";
+import SwiperCore, { Parallax, Pagination, Navigation, Thumbs } from "swiper";
 import { Slider, CardHome } from './home.model';
 
 
 SwiperCore.use([
   Navigation,
   Pagination,
-  A11y,
+  Thumbs
 ])
 
 @Component({

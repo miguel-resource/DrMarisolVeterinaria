@@ -56,9 +56,8 @@
                 contamos con los mejores epecialistas y ofrecemos una servicio de principio a fin para que
                 cada uno de nuestros pequeños amigos se vaya seguro a casa.
               </p>
-            </div>
-            <img src="https://cdn.pixabay.com/photo/2020/03/26/10/35/domestic-cat-4969984_960_720.jpg" alt="atención veterinaria">
-            
+              <img src="https://cdn.pixabay.com/photo/2020/03/26/10/35/domestic-cat-4969984_960_720.jpg" alt="atención veterinaria">
+            </div>      
           </div>
         </mat-tab>
         
@@ -77,13 +76,26 @@
             <mat-icon class="tab-icon"><i class="fas fa-images"></i></mat-icon>
           </ng-template>
           <div class="tab-content">
-
-          </div>
-        </mat-tab>
-       </mat-tab-group>
-      
-    </div>
+            <swiper
+            style="--swiper-navigation-color: #fff;--swiper-pagination-color:#fff"
+            [spaceBetween]="10"
+            [navigation]="true"
+            [thumbs]="{ swiper: thumbsSwiper}"
+            class="tab.swiper"
+            >
+              <ng-template swiperSlide>
+                <img src="" alt="swiper-tab">
+            
+            </ng-template>
+            
+          </swiper>
+          
+        </div>
+      </mat-tab>
+     </mat-tab-group>
     
+  </div>
+  
     
     <!--
       Ubication
