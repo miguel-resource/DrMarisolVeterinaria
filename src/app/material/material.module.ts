@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 //Componentes de material a importar
-import { MatButtonModule } from '@angular/material/button'; 
-import { MatToolbarModule } from '@angular/material/toolbar'; 
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatCardModule } from '@angular/material/card';
@@ -14,6 +14,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [],
@@ -30,10 +31,11 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatSidenavModule,
     MatListModule,
     MatTableModule,
-    MatTabsModule
-  ], 
+    MatTabsModule,
+    MatDialogModule
+  ],
   exports: [
-    MatButtonModule, 
+    MatButtonModule,
     MatToolbarModule,
     MatIconModule,
     MatBadgeModule,
@@ -44,7 +46,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     MatSidenavModule,
     MatListModule,
     MatTableModule,
-    MatTabsModule
+    MatTabsModule,
+    MatDialogModule
   ]
 })
 export class MaterialModule {

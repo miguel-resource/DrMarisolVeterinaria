@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from './../../../core/service/posts/posts.service'
-import SwiperCore, { Parallax, Pagination, Navigation, A11y } from "swiper";
+import SwiperCore, { Pagination, Navigation, A11y} from "swiper";
 import { Slider, CardHome } from './home.model';
-
+import { MatDialog } from '@angular/material/dialog';
 
 SwiperCore.use([
   Navigation,
   Pagination,
-  A11y,
+  A11y
 ])
 
 @Component({
@@ -15,9 +15,18 @@ SwiperCore.use([
   templateUrl: '../home/home.component.html',
   styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
 
   products = [];
+
+
+
+  constructor(
+    private postsService: PostsService,
+    public dialog: MatDialog
+  ) { }
+
 
   sliders: Slider[] = [
     {
@@ -64,9 +73,9 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  constructor(
-    private postsService: PostsService,
-  ) { }
+  openDialog() {
+    this.dialog.open(DialogCoworkComponent);
+  }
 
   ngOnInit() {
     this.fetchAllInfo();
@@ -122,5 +131,13 @@ export class HomeComponent implements OnInit {
       console.log(post);
     })
   }
+
+}
+
+@Component({
+  selector: 'dialog-cowork',
+  templateUrl: './../dialog/dialog.component.html'
+})
+export class DialogCoworkComponent {
 
 }
