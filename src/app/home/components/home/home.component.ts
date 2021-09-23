@@ -20,8 +20,6 @@ export class HomeComponent implements OnInit {
 
   products = [];
 
-
-
   constructor(
     private postsService: PostsService,
     public dialog: MatDialog

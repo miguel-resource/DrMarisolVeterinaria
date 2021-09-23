@@ -1,4 +1,4 @@
-
+<!--
 
 <div id="header">
     <div id="logo">
@@ -29,4 +29,39 @@
     </div>
 
 
-</div>
+</div> -->
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar id="logo">
+      <a routerLink="/home"><img
+        src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/logo-principal.png?alt=media&token=832ca6fc-af22-4dae-a12e-e3d5376b040d"
+        alt="Veterinaria Dra Marisol Logo">
+      </a>
+    </mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/home" routerLinkActive="active"><i class="fas fa-paw icon"></i>Inicio</a>
+      <a mat-list-item routerLink="/blog" routerLinkActive="active"><i class="fas fa-notes-medical icon"></i> Blog</a>
+      <a mat-list-item routerLink="/about" routerLinkActive="active"><i class="fas fa-syringe icon"></i>Nosotros</a>
+      <a mat-list-item routerLink="/contact" routerLinkActive="active"><i class="fas fa-address-book icon"></i>Contacto</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar id="toolbar">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <div [ngSwitch]="router.url" class="title-toolbar">
+        <span *ngSwitchCase="'/home'">Inicio</span>
+        <span *ngSwitchCase="'/blog'">Blog</span>
+        <span *ngSwitchCase="'/about'">Nosotros</span>
+        <span *ngSwitchCase="'/contact'">Contacto</span>
+      </div>
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

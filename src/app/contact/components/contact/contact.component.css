@@ -1,26 +1,31 @@
 #global-contacto{
     display: grid;
-    grid-template-columns: 0.3fr 1.8fr;
     grid-template-rows: 1fr;
 }
 
 #content-contact{
-    padding: 10px;
-    margin-left: 0%;
+  width: 100%;
+  padding: 10px;
+  margin-left: 0%;
 }
 
 #inicio-contacto{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    box-shadow: 0px 2px 7px #ccc;
+  box-shadow: 0px 2px 7px #ccc;
+}
+
+#inicio-text {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+#inicio-text > div {
+  margin-left: 5%;
 }
 
 #inicio-contacto #inicio-text h2{
-    margin-top: 10px !important;
-    margin-left: 16px !important;
+  margin-top: 10px !important;
+  margin-left: 16px !important;
 }
-
-
 
 #inicio-contacto #social-buttons{
     margin-top: 3px;
@@ -79,10 +84,11 @@
 
 
 #inicio-contacto #inicio-text p{
-    font-family: 'Montserrat', sans-serif;
-    display: block;
-    margin-top: 17px !important;
-    padding-left: 24px;
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 30px;
+  margin-top: 17px !important;
+  padding-left: 24px;
 }
 
 #img-contacto {
@@ -90,33 +96,34 @@
     height: 300px;
 }
 
-#img-contacto img{ 
-    display: block;
-    width: 48%;
-    margin: 0 auto;
+#img-contacto img{
+  display: block;
+  width: 48%;
+  margin: 0 auto;
+  padding-top: 8%;
 }
 
 /*
     FORMULARIO
 */
 #form-contact{
-    box-shadow: 0px 2px 7px #ccc;
-    margin-top: 10px;
-    background: #060c23 !important;
-    color: #fff;
+  box-shadow: 0px 2px 7px #ccc;
+  margin-top: 10px;
+  background: #060c23 !important;
+  color: #fff;
 }
 
 #form-contact{
-    padding: 10px;
-    display: grid;
-    grid-template-columns: 0.8fr 1.1fr;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 0.8fr 1.1fr;
 }
 
 #form-contact #form-send{
-    display: grid;
-    grid-template-columns: 1fr;
-    padding: 13%;
-    padding-top:0px;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 13%;
+  padding-top:0px;
 }
 
 #form-contact #form-send h3{
@@ -129,8 +136,8 @@
 }
 
 #form-contact #form-send mat-label{
-    font-size: 16px;
-    color: #fff;
+  font-size: 16px;
+  color: #fff;
 }
 
 #form-contact #form-send mat-form-field input, textarea{
@@ -150,7 +157,7 @@
     background-color: #7ebef3;
 }
 
-/* 
+/*
     CONTACTO TEXTO
 */
 

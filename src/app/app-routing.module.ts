@@ -4,13 +4,15 @@ import { RouterModule, Routes, PreloadAllModules} from '@angular/router';
 import { BlogComponent } from './blog/blog.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LayoutComponent } from './layout/layout.component';
+import { HeaderComponent } from './shared/components/header/header.component';
 
 import { AdminGuard } from './admin.guard';
+import { HomeComponent } from './home/components/home/home.component';
 
 const routes:Routes = [
     { //DEFAULT
         path:'',
-        component: LayoutComponent,
+        component: HeaderComponent,
         children: [
             {
                 path: '',
@@ -45,7 +47,7 @@ const routes:Routes = [
         path: '**',
         component: PageNotFoundComponent
     }
-    
+
 ];
 
 @NgModule({

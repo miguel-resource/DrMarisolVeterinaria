@@ -1,9 +1,11 @@
-@import "~swiper/css";
-@import "~swiper/css/effect-cards";
+
 #global{
   display: grid;
-  grid-template-columns: 0.3fr 1.7fr;
-  grid-template-rows: 1fr;
+
+}
+
+#content-home {
+  width: 100%;
 }
 
 .swiper{

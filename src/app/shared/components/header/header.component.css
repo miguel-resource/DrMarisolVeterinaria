@@ -1,4 +1,4 @@
-:host{
+/* :host{
     text-decoration: none;
 }
 
@@ -43,7 +43,7 @@
 }
 
 #header #nav ul li{
-    list-style: none;    
+    list-style: none;
     width: 80%;
     height: 30px;
     line-height: 29px;
@@ -52,7 +52,7 @@
     margin: 0 auto;
     margin-bottom: 40px;
     border-radius: 20px;
-    
+
 }
 
 
@@ -60,7 +60,7 @@
 #header #nav ul li:hover{
     background-color: #4DABF7;
     color: #fff;
-    transition:all 550ms;   
+    transition:all 550ms;
 }
 
 #header #nav ul li:hover a,
@@ -84,14 +84,63 @@
 
 #header #nav ul li a{
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
+
 }
 
-/* Clase active */
+
 .active,
 .active a,
 .active i{
     background-color: #4DABF7;
     color: rgb(255, 255, 255) !important;
 }
+*/
+
+#logo{
+  margin: 0 auto;
+  margin-bottom: 20px;
+  height: auto;
+  width: 100%;
+  box-shadow: 0px 0px 3px #ccc inset;
+}
+
+mat-sidenav-container > mat-toolbar a{
+  display: block;
+  margin-top: 20px;
+}
+mat-toolbar img {
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 150px;
+}
+
+mat-nav-list a{
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  margin-bottom: 15px;
+  transition: 0.4s all;
+}
+
+mat-nav-list i {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+mat-nav-list a:hover {
+  background-color: #4DABF7;
+  color: #fff;
+}
+
+#toolbar {
+  background-color: #171b47;
+}
+
+.title-toolbar span {
+  color: #fff;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
 
