@@ -1,13 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from './../../../core/service/posts/posts.service'
+<<<<<<< HEAD
 import SwiperCore, { Pagination, Navigation, A11y} from "swiper";
+=======
+import SwiperCore, { Parallax, Pagination, Navigation, Thumbs } from "swiper";
+>>>>>>> 47be36df2f494318caf980060b3dcfb240574910
 import { Slider, CardHome } from './home.model';
 import { MatDialog } from '@angular/material/dialog';
 
 SwiperCore.use([
   Navigation,
   Pagination,
+<<<<<<< HEAD
   A11y
+=======
+  Thumbs
+>>>>>>> 47be36df2f494318caf980060b3dcfb240574910
 ])
 
 @Component({

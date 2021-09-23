@@ -84,7 +84,13 @@
 
 #header #nav ul li a{
     text-decoration: none;
+<<<<<<< HEAD
 
+=======
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    line-height: 30px;
+>>>>>>> 47be36df2f494318caf980060b3dcfb240574910
 }
 
 
