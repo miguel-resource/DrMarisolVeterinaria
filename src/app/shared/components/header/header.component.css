@@ -108,6 +108,7 @@ mat-sidenav-container > mat-toolbar a{
   display: block;
   margin-top: 20px;
 }
+
 mat-toolbar img {
   margin: 0 auto;
   margin-top: 10px;
@@ -134,6 +135,10 @@ mat-nav-list a:hover {
 
 #toolbar {
   background-color: #171b47;
+}
+
+#toolbar mat-icon {
+  color: #fff;
 }
 
 .title-toolbar span {

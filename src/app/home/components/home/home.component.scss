@@ -44,7 +44,15 @@
 mat-card {
   border-radius: 7%;
   height: 100%;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
+}
+
+#cowork .card .mat-card-avatar {
+  color: #fff;
+  background-color: #171b47 ;
+  font-size: 25px;
+  text-align: center;
+  line-height: 40px;
 }
 
 .icon-card i {
@@ -160,13 +168,23 @@ mat-card-content span {
 }
 
 #cowork .card img {
+  border-radius: 5%;
   height: 320px;
-  width: 100%;
   object-fit: cover;
+  width: 100%;
+}
+
+mat-card-actions {
+  padding-left: 8px;
 }
 
 #cowork .card button {
-  color: #161a47;
+  color: #5C98FB;
+}
+
+#cowork .card button i {
+  line-height: 30px;
+  font-size: 20px;
 }
 
 
