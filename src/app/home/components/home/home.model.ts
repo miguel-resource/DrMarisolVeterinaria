@@ -1,11 +1,11 @@
 export interface Slider{
   title: string;
   content: string;
-  backgroud: string;
+  background: string;
   url: string;
 }
 
-export interface CardHome { 
+export interface CardHome {
   title: string;
   content: string;
   highlith: string;

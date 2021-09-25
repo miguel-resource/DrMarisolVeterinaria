@@ -1,1 +1,15 @@
-<p>dialog works!</p>
+<div id="dialog-cowork">
+  <div class="dialog-info">
+    <h3 mat-dialog-title>{{ data.nombre }}</h3>
+  </div>
+  <div mat-dialog-content>
+    <span>{{ data.ocupacion }}</span>
+    <p>{{ data.descripcion }}</p>
+    <ul>
+      <li><i class="fas fa-at"></i> {{ data.email }}</li>
+      <li><i class="fas fa-phone-square-alt"></i> {{ data.tel }}</li>
+    </ul>
+  </div>
+</div>
+
+

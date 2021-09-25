@@ -22,42 +22,42 @@ export class AboutComponent implements OnInit {
     {
       name: 'consultas',
       icon: 'notes-medical',
-      content: ''
+      content: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus similique, consequuntur at laboriosam perspiciatis'
     },
     {
       name: 'alimento',
       icon: 'bone',
-      content: ''
+      content:  'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus similique, consequuntur at laboriosam perspiciatis'
     },
     {
       name: 'accesorios',
       icon: 'dog',
-      content: ''
+      content:  'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus similique, consequuntur at laboriosam perspiciatis'
     },
     {
       name: 'vacunas',
       icon: 'dog',
-      content: ''
+      content:  'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus similique, consequuntur at laboriosam perspiciatis'
     },
     {
       name: 'desparacitaciones',
       icon: 'pills',
-      content: ''
+      content:  'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus similique, consequuntur at laboriosam perspiciatis'
     },
     {
       name: 'estética canina',
       icon: 'bath',
-      content: ''
+      content:  'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus similique, consequuntur at laboriosam perspiciatis'
     },
     {
       name: 'cirugías',
       icon: 'user-md',
-      content: ''
+      content:  'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus similique, consequuntur at laboriosam perspiciatis'
     },
     {
       name: 'limpieza dental',
       icon: 'teeth',
-      content: ''
+      content:  'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus similique, consequuntur at laboriosam perspiciatis'
     }
   ];
 

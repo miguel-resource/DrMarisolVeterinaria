@@ -9,6 +9,9 @@ import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from './../shared/shared.module';
 import { SwiperModule } from 'swiper/angular';
 
+//Firebase
+import { AngularFireModule } from '@angular/fire';
+import { environment } from './../../environments/environment.prod';
 
 //Importar librerías
 import { MaterialModule } from '../material/material.module';
@@ -23,7 +26,8 @@ import { MaterialModule } from '../material/material.module';
         CommonModule,
         SharedModule,
         MaterialModule,
-        SwiperModule
+        SwiperModule,
+        AngularFireModule.initializeApp(environment.firebaseConfig),
     ]
 })
 export class HomeModule{

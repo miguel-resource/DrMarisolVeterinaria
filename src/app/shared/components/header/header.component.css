@@ -118,7 +118,8 @@ mat-sidenav-container > mat-toolbar a{
 mat-toolbar img {
   margin: 0 auto;
   margin-top: 10px;
-  width: 150px;
+  width: 153px;
+  height: 120px;
 }
 
 mat-nav-list a{

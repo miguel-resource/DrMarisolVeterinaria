@@ -42,7 +42,6 @@
       INTRODDCIÓN
     -->
     <div id="introduction">
-<<<<<<< HEAD
 
      <div class="tab-content">
         <div class="tab-introduction">
@@ -66,41 +65,20 @@
       <div class="tab-content">
         <h3 class="title-principal">Equipo de trabajo</h3>
         <div id="cowork">
-          <mat-card class="card">
+
+          <mat-card class="card" *ngFor="let item of collaborators">
             <mat-card-header>
               <div mat-card-avatar><i class="fas fa-user-md"></i></div>
-              <mat-card-title>Nombre del colaborador</mat-card-title>
-              <mat-card-subtitle>Ocupación</mat-card-subtitle>
+              <mat-card-title>{{ item.nombre }}</mat-card-title>
+              <mat-card-subtitle>{{ item.ocupacion }}</mat-card-subtitle>
             </mat-card-header>
-            <img src="https://images.pexels.com/photos/5487070/pexels-photo-5487070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Doctor x">
+            <img src="{{ item.foto }}" alt="{{ item.nombre }}">
             <mat-card-actions>
-              <button mat-stroked-button (click)="openDialog()">
+              <button mat-stroked-button (click)="openDialog(item)">
                 <i class="fas fa-eye"></i>
-              </button>
-              <button mat-stroked-button>
-                <i class="fas fa-phone"></i>
               </button>
             </mat-card-actions>
           </mat-card>
-
-          <mat-card class="card">
-            <mat-card-header>
-              <div mat-card-avatar><i class="fas fa-user-md"></i></div>
-              <mat-card-title>Nombre del colaborador</mat-card-title>
-              <mat-card-subtitle>Ocupación</mat-card-subtitle>
-            </mat-card-header>
-            <img src="https://images.pexels.com/photos/5487070/pexels-photo-5487070.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Doctor x">
-            <mat-card-actions>
-              <button mat-stroked-button (click)="openDialog()">
-                <i class="fas fa-eye"></i>
-              </button>
-              <button mat-stroked-button>
-                <i class="fas fa-phone"></i>
-              </button>
-
-            </mat-card-actions>
-          </mat-card>
-
 
         </div>
       </div>
@@ -108,66 +86,6 @@
     </div>
 
 
-
-=======
-      <mat-tab-group>
-        <mat-tab>
-          <ng-template mat-tab-label>
-            <mat-icon class="tab-icon"><i class="fas fa-first-aid"></i></mat-icon>
-          </ng-template>
-          
-          <div class="tab-content">
-            <div class="tab-text">
-              <p>
-                En la <span>Veterinaria Dra. Marisol</span> ofrecemos una atención especializada para tu mascota, 
-                contamos con los mejores epecialistas y ofrecemos una servicio de principio a fin para que
-                cada uno de nuestros pequeños amigos se vaya seguro a casa.
-              </p>
-              <img src="https://cdn.pixabay.com/photo/2020/03/26/10/35/domestic-cat-4969984_960_720.jpg" alt="atención veterinaria">
-            </div>      
-          </div>
-        </mat-tab>
-        
-        <mat-tab>
-          <ng-template mat-tab-label>
-            <mat-icon class="tab-icon"><i class="fas fa-map-marked-alt"></i></mat-icon>
-          </ng-template>
-          <div class="tab-content">
-            <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" 
-            src="https://maps.google.com/maps?width=1254&amp;height=400&amp;hl=en&amp;q=Libres%20801%20Oaxaca%20
-            City+(Veterinaria%20Dra.%20Marisol)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-          </div>
-        </mat-tab>
-        <mat-tab>
-          <ng-template mat-tab-label>
-            <mat-icon class="tab-icon"><i class="fas fa-images"></i></mat-icon>
-          </ng-template>
-          <div class="tab-content">
-            <swiper
-            style="--swiper-navigation-color: #fff;--swiper-pagination-color:#fff"
-            [spaceBetween]="10"
-            [navigation]="true"
-            [thumbs]="{ swiper: thumbsSwiper}"
-            class="tab.swiper"
-            >
-              <ng-template swiperSlide>
-                <img src="" alt="swiper-tab">
-            
-            </ng-template>
-            
-          </swiper>
-          
-        </div>
-      </mat-tab>
-     </mat-tab-group>
-    
-  </div>
-  
-    
-    <!--
-      Ubication
-    -->
->>>>>>> 47be36df2f494318caf980060b3dcfb240574910
 
     <!--
 

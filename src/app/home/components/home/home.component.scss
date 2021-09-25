@@ -115,7 +115,7 @@ mat-card-content span {
 .tab-content {
   margin: 0 auto;
   padding: 20px;
-  width: 95%;
+  width: 100%;
 }
 
 .tab-content h3 {
@@ -123,7 +123,6 @@ mat-card-content span {
 }
 
 .tab-content iframe {
-<<<<<<< HEAD
   height: 300px;
   width: 100%;
 }
@@ -158,14 +157,15 @@ mat-card-content span {
 #cowork {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   max-height: 70%;
+  width: 100%;
 }
 
 #cowork .card {
   box-shadow: 2px 2px 10px gray;
   margin: 0 auto;
-  width: 75%;
+  width: 100%;
 }
 
 #cowork .card img {
@@ -194,39 +194,6 @@ mat-card-actions {
 
 
 
-=======
-  height: 290px;
-  width: 100%;
-}
-
-.tab-item { 
-  display: grid;
-  grid-template-columns: 50% 60%;
-  width: 100%;
-}
-
-.tab-item p {
-  color: black;
-  display: block;
-  font-family: 'Karla', sans-serif;
-  font-size: 20px;
-  line-height: 38px;
-}
-
-.tab-item span {
-  color: #4caaf7;
-  font-family: sans-serif; 
-  font-weight: bold;
-}
-
-.tab-item img{
-  border: 10px solid #0f1f47;
-  border-radius: 2%;
-  box-shadow: 0px 8px 10px gray;
-  margin: 0 auto;
-  width: 80%;
-}
->>>>>>> 47be36df2f494318caf980060b3dcfb240574910
 
 
 

@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from './../../../core/service/posts/posts.service'
-<<<<<<< HEAD
 import SwiperCore, { Pagination, Navigation, A11y} from "swiper";
-=======
-import SwiperCore, { Parallax, Pagination, Navigation, Thumbs } from "swiper";
->>>>>>> 47be36df2f494318caf980060b3dcfb240574910
 import { Slider, CardHome } from './home.model';
 import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from './../dialog/dialog.component'
+
+//Services
+import { CollaboratorsService } from './../../../core/service/collaborators/collaborators.service'
+
+//Models
+import { Collaborator } from './../../../core/models/collaborators.model';
+
 
 SwiperCore.use([
   Navigation,
   Pagination,
-<<<<<<< HEAD
   A11y
-=======
-  Thumbs
->>>>>>> 47be36df2f494318caf980060b3dcfb240574910
 ])
 
 @Component({
@@ -26,34 +26,57 @@ SwiperCore.use([
 
 export class HomeComponent implements OnInit {
 
-  products = [];
-
-  constructor(
-    private postsService: PostsService,
-    public dialog: MatDialog
-  ) { }
-
+  //CRUDS TO DATA BASE
+  collaborators: Collaborator[] = [];
 
   sliders: Slider[] = [
     {
       title: 'Prueba 1',
       content: 'Somos una empresa dedicada a la salud de tus mascotas',
-      backgroud: '',
+      background: 'https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/slider%2Fbackground7.jpg?alt=media&token=38744b8f-47e4-4780-a96e-27f30dfca556',
       url: 'askdjaslkdjaskldjsa'
     },
     {
       title: 'Prueba 2',
       content: 'Somos una empresa dedicada a la salud de tus mascotas',
-      backgroud: '',
+      background: '',
       url: ''
     },
     {
       title: 'Prueba 3',
       content: 'Somos una empresa dedicada a la salud de tus mascotas',
-      backgroud: '',
+      background: '',
       url: ''
     },
   ];
+
+  constructor(
+    private postsService: PostsService,
+    public dialog: MatDialog,
+    private collaboratorsService: CollaboratorsService,
+  ) { }
+
+  ngOnInit(): void {
+    this.fetchAllInfo();
+    this.fetchInfo('2');
+
+    this.collaboratorsService.getAllCollaborators().subscribe(resp => {
+      this.collaborators = resp.map((e:any) => {
+        return {
+          nombre: e.payload.doc.data().nombre,
+          ocupacion: e.payload.doc.data().ocupacion,
+          descripcion: e.payload.doc.data().descripcion,
+          email: e.payload.doc.data().email,
+          tel: e.payload.doc.data().tel,
+          foto: e.payload.doc.data().foto,
+        }
+      })
+    }, err => {
+      console.error(err);
+    });
+
+    console.log("Colaboradores" + this.collaborators);
+  }
 
   cards: CardHome[] = [
     {
@@ -79,15 +102,18 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-  openDialog() {
-    this.dialog.open(DialogCoworkComponent);
+  openDialog(item:any):void {
+    let dialogRef = this.dialog.open(DialogComponent, {
+      data: {
+        nombre: item.nombre,
+        ocupacion: item.ocupacion,
+        descripcion: item.descripcion,
+        email: item.email,
+        tel: item.tel,
+      }
+    })
+    //this.dialog.open(DialogCoworkComponent);
   }
-
-  ngOnInit() {
-    this.fetchAllInfo();
-    this.fetchInfo('2');
-  }
-
 
   fetchAllInfo(){
     this.postsService.getAllInfo()
@@ -140,10 +166,4 @@ export class HomeComponent implements OnInit {
 
 }
 
-@Component({
-  selector: 'dialog-cowork',
-  templateUrl: './../dialog/dialog.component.html'
-})
-export class DialogCoworkComponent {
 
-}
