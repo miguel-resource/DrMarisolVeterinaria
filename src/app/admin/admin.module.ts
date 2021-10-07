@@ -10,6 +10,8 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
 import { FormPostsComponent } from './components/form-posts/form-posts.component';
 import { PostEditComponent } from './components/post-edit/post-edit.component';
+import { ColaboratorsComponent } from './components/colaborators/colaborators.component';
+import { ColaboratorsEditComponent } from './components/colaborators-edit/colaborators-edit.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { PostEditComponent } from './components/post-edit/post-edit.component';
     NavComponent,
     PostsListComponent,
     FormPostsComponent,
-    PostEditComponent
+    PostEditComponent,
+    ColaboratorsComponent,
+    ColaboratorsEditComponent
   ],
   imports: [
     CommonModule,

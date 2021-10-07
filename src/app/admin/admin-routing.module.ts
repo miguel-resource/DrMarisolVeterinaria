@@ -5,6 +5,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
 import { FormPostsComponent } from './components/form-posts/form-posts.component';
 import { PostEditComponent } from './components/post-edit/post-edit.component';
+import { ColaboratorsComponent } from './components/colaborators/colaborators.component'
 
 const routes: Routes = [
   {
@@ -12,8 +13,11 @@ const routes: Routes = [
     component: NavComponent,
     children: [
       {
-        path: 'create',
-        component: FormPostsComponent,
+        path: '',
+        component: ColaboratorsComponent,
+      },
+      {
+        path: '/edit'
       },
       {
         path: 'posts',

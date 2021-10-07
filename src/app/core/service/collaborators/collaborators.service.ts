@@ -14,6 +14,10 @@ export class CollaboratorsService {
     return this.firestore.collection("collaboratorsService").snapshotChanges();
   }
 
+  getCollaborator(id:any) {
+    return  this.firestore.collection("collaboratorsService").doc(id).get();  
+  }
+
   createCollaborator(collaborator: any){
     return this.firestore.collection("collaboratorsService").add(collaborator);
   }
@@ -23,6 +27,6 @@ export class CollaboratorsService {
   }
 
   deleteCollaborator(id:any){
-    return this.firestore.collection("collaboratorsService").doc(id).delete();
+    return this.firestore.collection("collaboratorsServce").doc(id).delete();
   }
 }

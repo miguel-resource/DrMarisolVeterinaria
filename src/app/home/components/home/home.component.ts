@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from './../../../core/service/posts/posts.service'
 import SwiperCore, { Pagination, Navigation, A11y} from "swiper";
-import { Slider, CardHome } from './home.model';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './../dialog/dialog.component'
 
 //Services
 import { CollaboratorsService } from './../../../core/service/collaborators/collaborators.service'
+import { CardhomeService } from './../../../core/service/cardhome/cardhome.service';
+import { SliderService } from './../../../core/service/slider/slider.service'; 
 
 //Models
 import { Collaborator } from './../../../core/models/collaborators.model';
-
+import { Slider } from './../../../core/models/slider.model'
+import { CardHome } from './../../../core/models/cardhome.model'
 
 SwiperCore.use([
   Navigation,
@@ -28,38 +30,23 @@ export class HomeComponent implements OnInit {
 
   //CRUDS TO DATA BASE
   collaborators: Collaborator[] = [];
+  cards: CardHome[] = [];
 
-  sliders: Slider[] = [
-    {
-      title: 'Prueba 1',
-      content: 'Somos una empresa dedicada a la salud de tus mascotas',
-      background: 'https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/slider%2Fbackground7.jpg?alt=media&token=38744b8f-47e4-4780-a96e-27f30dfca556',
-      url: 'askdjaslkdjaskldjsa'
-    },
-    {
-      title: 'Prueba 2',
-      content: 'Somos una empresa dedicada a la salud de tus mascotas',
-      background: '',
-      url: ''
-    },
-    {
-      title: 'Prueba 3',
-      content: 'Somos una empresa dedicada a la salud de tus mascotas',
-      background: '',
-      url: ''
-    },
-  ];
+
+  sliders: Slider[] = [];
 
   constructor(
-    private postsService: PostsService,
+   private postsService: PostsService,
     public dialog: MatDialog,
     private collaboratorsService: CollaboratorsService,
-  ) { }
+    private cardhomeService: CardhomeService,
+    private sliderService: SliderService
+  ) {}
 
   ngOnInit(): void {
     this.fetchAllInfo();
     this.fetchInfo('2');
-
+    //Firebase get Colaborators
     this.collaboratorsService.getAllCollaborators().subscribe(resp => {
       this.collaborators = resp.map((e:any) => {
         return {
@@ -74,33 +61,36 @@ export class HomeComponent implements OnInit {
     }, err => {
       console.error(err);
     });
+    //Firebase get CardsHome
+    this.cardhomeService.getAllCards().subscribe(resp => {
+      this.cards = resp.map((e:any) => {
+        return {
+          title: e.payload.doc.data().titulo,
+          content: e.payload.doc.data().contenido,
+          highligth: e.payload.doc.data().highlight,
+          url: e.payload.doc.data().url,
+          icon: e.payload.doc.data().icon
+        }
+      })
+    }, err => {
+      console.error(err);
+    });
+
+    //Firebase get Slider
+    this.sliderService.getAllSliders().subscribe(resp =>{ 
+      this.sliders = resp.map((e:any) => {
+        return { 
+            title: e.payload.doc.data().titulo,
+            content: e.payload.doc.data().contenido,
+            background: e.payload.doc.data().background,
+            url: e.payload.doc.data().url
+        }
+      })
+    })
 
     console.log("Colaboradores" + this.collaborators);
   }
 
-  cards: CardHome[] = [
-    {
-      title: 'cotización',
-      content: "Cotiza con nosotros algunos de nuestros servicios o productos a través de nuestro formulario en la sección de ",
-      highlith: 'contacto',
-      url: '/contact',
-      icon: 'fab fa-wpforms'
-    },
-    {
-      title: 'blog',
-      content: 'Checa nuestros tips y recomendaciones para el cuidado y mantenimiento de tus pequeños amigos en nuestra sección de ',
-      highlith: 'blog',
-      url: '/blog',
-      icon: 'fas fa-blog'
-    },
-    {
-      title: 'servicios',
-      content: 'Puedes ver nuestras principales servicios que ofrecemos, además de nuestros principales proveedores en nuestra sección de ',
-      highlith: 'nosotros',
-      url: '/about',
-      icon: 'fas fa-concierge-bell'
-    }
-  ];
 
   openDialog(item:any):void {
     let dialogRef = this.dialog.open(DialogComponent, {
