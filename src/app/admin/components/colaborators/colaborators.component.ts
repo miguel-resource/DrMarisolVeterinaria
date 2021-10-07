@@ -4,6 +4,7 @@ import { CollaboratorsService } from './../../../core/service/collaborators/coll
 
 //Models
 import { Collaborator } from './../../../core/models/collaborators.model'
+
 @Component({
   selector: 'app-colaborators',
   templateUrl: './colaborators.component.html',
@@ -12,6 +13,7 @@ import { Collaborator } from './../../../core/models/collaborators.model'
 export class ColaboratorsComponent implements OnInit {
 
   colaborators: Collaborator[] = []
+  displayedColumns: string[] = ['id', 'nombre', 'ocupacion', 'descripcion', 'email','tel']
 
   constructor(
     private collaboratorsService: CollaboratorsService,
@@ -21,6 +23,7 @@ export class ColaboratorsComponent implements OnInit {
     this.collaboratorsService.getAllCollaborators().subscribe(resp => {
       this.colaborators = resp.map((e:any) =>{
         return {
+          id: e.payload.doc.id, 
           nombre: e.payload.doc.data().nombre,
           ocupacion: e.payload.doc.data().ocupacion,
           descripcion: e.payload.doc.data().descripcion,
