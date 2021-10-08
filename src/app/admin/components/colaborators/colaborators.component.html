@@ -1,11 +1,9 @@
-<h3>Colaboradores</h3>
-<button>Hola</button>
+<div class="colaborators-intro">
+    <h3>Colaboradores</h3>
+    <button mat-raised-button color="primary">Crear un nuevo colaborador</button>
+</div>
 <table mat-table [dataSource]=colaborators class="mat-elevation-z8">
 >
-    <ng-container matColumnDef="id">
-        <th mat-header *matHeaderCellDef>ID</th>
-        <td mat-cell *matCellDef="let item">{{ item.id}}</td>
-    </ng-container>
 
     <ng-container matColumnDef="nombre"> 
         <th mat-header *matHeaderCellDef>Nombre</th>
@@ -17,7 +15,7 @@
     </ng-container>
     <ng-container matColumnDef="descripcion">
         <th mat-header *matHeaderCellDef>Descripción</th>
-        <td mat-cell *matCellDef="let item">{{ item.descripcion | slice:0:60 }}...</td>
+        <td mat-cell *matCellDef="let item">{{ item.descripcion | slice:0:50 }}...</td>
     </ng-container>
     <ng-container matColumnDef="email">
         <th mat-header *matHeaderCellDef>Email</th>
@@ -27,7 +25,13 @@
         <th mat-header *matHeaderCellDef>Tel.</th>
         <td mat-cell *matCellDef="let item">{{ item.tel }}</td>
     </ng-container>
-
+    <ng-container matColumnDef="acciones">
+        <th mat-header *matHeaderCellDef>Acciones</th>
+        <div *matCellDef="let item" class="buttons">
+            <button classs="buttonEdit"mat-mini-fab color="primary"><i class="fas fa-edit"></i></button>
+            <button mat-mini-fab color="warn" (click)="delete(item)"><i class="fas fa-trash"></i></button>
+        </div>
+    </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     

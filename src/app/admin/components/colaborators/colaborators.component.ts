@@ -13,7 +13,7 @@ import { Collaborator } from './../../../core/models/collaborators.model'
 export class ColaboratorsComponent implements OnInit {
 
   colaborators: Collaborator[] = []
-  displayedColumns: string[] = ['id', 'nombre', 'ocupacion', 'descripcion', 'email','tel']
+  displayedColumns: string[] = ['nombre', 'ocupacion', 'descripcion', 'email','tel', 'acciones']
 
   constructor(
     private collaboratorsService: CollaboratorsService,
@@ -30,6 +30,7 @@ export class ColaboratorsComponent implements OnInit {
           email: e.payload.doc.data().email,
           tel: e.payload.doc.data().tel,
           foto: e.payload.doc.data().foto,
+          idFirebase: e.payload.doc.id
         }
       })
     }, error => {
@@ -38,4 +39,8 @@ export class ColaboratorsComponent implements OnInit {
   }
 
 
+  delete(item:any) {
+    this.collaboratorsService.deleteCollaborator(item.id);
+    console.log("Haz eliminado a "+ item.nombre);
+  }
 }

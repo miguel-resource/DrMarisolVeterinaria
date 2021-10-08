@@ -27,6 +27,6 @@ export class CollaboratorsService {
   }
 
   deleteCollaborator(id:any){
-    return this.firestore.collection("collaboratorsServce").doc(id).delete();
+    return this.firestore.collection("collaboratorsService").doc(id).delete();
   }
 }

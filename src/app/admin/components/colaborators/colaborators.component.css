@@ -1,5 +1,35 @@
+.colaborators-intro { 
+    width: 60%;
+    margin: 0 auto;
+}
+
+h3 {
+    text-align: center;
+}
+
+.colaborators-intro button {
+    background-color: #2d88ff !important;
+}
+
 table { 
     width: 95%;
     margin: 0 auto;
     margin-top: 20px;
+} 
+
+table button { 
+    margin-right: 5px;
 }
+
+table .buttons {
+    margin: 0 auto;
+    margin-left: 17%;
+}
+
+table .buttonEdit { 
+    background-color: #2d88ff;
+    margin-left: 16% !important;
+}
+
+
+
