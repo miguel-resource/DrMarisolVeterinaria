@@ -1,34 +1,37 @@
-.colaborators-intro { 
-    width: 60%;
-    margin: 0 auto;
+.colaborators-intro {
+  width: 60%;
+  margin: 0 auto;
 }
 
 h3 {
-    text-align: center;
+  text-align: center;
 }
 
 .colaborators-intro button {
-    background-color: #2d88ff !important;
+  background-color: #2d88ff !important;
+  left: 34%;
+  margin-top: 20px;
 }
 
-table { 
-    width: 95%;
-    margin: 0 auto;
-    margin-top: 20px;
-} 
+table {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+}
 
-table button { 
-    margin-right: 5px;
+table button {
+  margin-right: 5px;
 }
 
 table .buttons {
-    margin: 0 auto;
-    margin-left: 17%;
+  margin: 0 auto;
+  margin-left: 13%;
 }
 
-table .buttonEdit { 
-    background-color: #2d88ff;
-    margin-left: 16% !important;
+table .buttonEdit {
+  background-color: #2d88ff;
+  margin-left: 16% !important;
 }
 
 

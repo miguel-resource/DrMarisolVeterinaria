@@ -11,8 +11,9 @@ export class ContactComponent implements OnInit {
   emailField: FormControl;
   textAreaField: FormControl;
   nameField: FormControl;
-  
+
   constructor() {
+
     this.emailField = new FormControl('', [
       Validators.required,
        Validators.email
@@ -55,4 +56,3 @@ export class ContactComponent implements OnInit {
     return this.nameField.hasError('textArea')  ? 'Mensaje inválido' : '';
   }
 }
-  

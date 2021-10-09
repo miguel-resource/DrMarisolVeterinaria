@@ -7,7 +7,7 @@ import { DialogComponent } from './../dialog/dialog.component'
 //Services
 import { CollaboratorsService } from './../../../core/service/collaborators/collaborators.service'
 import { CardhomeService } from './../../../core/service/cardhome/cardhome.service';
-import { SliderService } from './../../../core/service/slider/slider.service'; 
+import { SliderService } from './../../../core/service/slider/slider.service';
 
 //Models
 import { Collaborator } from './../../../core/models/collaborators.model';
@@ -56,6 +56,7 @@ export class HomeComponent implements OnInit {
           email: e.payload.doc.data().email,
           tel: e.payload.doc.data().tel,
           foto: e.payload.doc.data().foto,
+          idFirebase: e.payload.doc.id
         }
       })
     }, err => {
@@ -77,9 +78,9 @@ export class HomeComponent implements OnInit {
     });
 
     //Firebase get Slider
-    this.sliderService.getAllSliders().subscribe(resp =>{ 
+    this.sliderService.getAllSliders().subscribe(resp =>{
       this.sliders = resp.map((e:any) => {
-        return { 
+        return {
             title: e.payload.doc.data().titulo,
             content: e.payload.doc.data().contenido,
             background: e.payload.doc.data().background,

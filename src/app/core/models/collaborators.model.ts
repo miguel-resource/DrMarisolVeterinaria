@@ -5,4 +5,6 @@ export interface Collaborator {
   email: string;
   tel: string;
   foto: string;
+  idFirebase: string;
+
 }

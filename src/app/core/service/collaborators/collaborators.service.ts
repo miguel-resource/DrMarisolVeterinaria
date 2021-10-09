@@ -15,7 +15,7 @@ export class CollaboratorsService {
   }
 
   getCollaborator(id:any) {
-    return  this.firestore.collection("collaboratorsService").doc(id).get();  
+    return  this.firestore.collection("collaboratorsService").doc(id).get();
   }
 
   createCollaborator(collaborator: any){

@@ -17,9 +17,6 @@ const routes: Routes = [
         component: ColaboratorsComponent,
       },
       {
-        path: '/edit'
-      },
-      {
         path: 'posts',
         component: PostsListComponent
       },

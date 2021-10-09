@@ -1,11 +1,11 @@
 <div class="colaborators-intro">
     <h3>Colaboradores</h3>
-    <button mat-raised-button color="primary">Crear un nuevo colaborador</button>
+    <button mat-raised-button color="primary" (click)="openCreate()">Crear un nuevo colaborador</button>
 </div>
 <table mat-table [dataSource]=colaborators class="mat-elevation-z8">
 >
 
-    <ng-container matColumnDef="nombre"> 
+    <ng-container matColumnDef="nombre">
         <th mat-header *matHeaderCellDef>Nombre</th>
         <td mat-cell *matCellDef="let item">{{ item.nombre }}</td>
     </ng-container>
@@ -28,11 +28,11 @@
     <ng-container matColumnDef="acciones">
         <th mat-header *matHeaderCellDef>Acciones</th>
         <div *matCellDef="let item" class="buttons">
-            <button classs="buttonEdit"mat-mini-fab color="primary"><i class="fas fa-edit"></i></button>
+            <button classs="buttonEdit"mat-mini-fab color="primary" (click)="update(item)"><i class="fas fa-edit"></i></button>
             <button mat-mini-fab color="warn" (click)="delete(item)"><i class="fas fa-trash"></i></button>
         </div>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    
+
 </table>
