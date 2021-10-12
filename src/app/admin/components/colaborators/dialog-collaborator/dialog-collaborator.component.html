@@ -1,0 +1,48 @@
+<form [formGroup]="formColab">
+  <div class="form">
+    <label for="">Nombre <span>*</span></label>
+    <i class="far fa-address-card"></i>
+    <input type="text" formControlName="nombre" placeholder="Nombre" required>
+  </div>
+
+  <div class="form">
+    <label>Ocupación <span>*</span></label>
+    <i class="fas fa-user-md"></i>
+    <input  formControlName="ocupacion" placeholder="Ocupación" required>
+  </div>
+
+  <div class="form">
+    <label>Descripción <span>*</span></label>
+    <i class="fas fa-id-badge"></i>
+    <textarea cols="30" rows="5" formControlName="descripcion" placeholder="Descripción"
+    required></textarea>
+  </div>
+
+  <div class="form">
+    <label>Email <span>*</span></label>
+    <i class="fas fa-envelope-square"></i>
+    <input type="email" formControlName="email" placeholder="Email" required>
+  </div>
+
+  <div class="form">
+    <label>Teléfono <span>*</span></label>
+    <i class="fas fa-phone-square-alt"></i>
+    <input type="number" formControlName="tel" placeholder="Tel." required>
+  </div>
+
+  <div class="form">
+    <div class="form-image">
+      <img src="{{ imageFoto }}">
+    </div>
+    <label>Foto <span>*</span></label>
+    <i class="fas fa-camera"></i>
+    <input [(ngModel)]="imageFoto" type="text" formControlName="foto" placeholder="Foto" required>
+  </div>
+
+  <button   mat-raised-button color="primary"
+  [disabled]="!formColab.valid" (click)="updateCollaborator()" *ngIf="idUpdateFirebase.length > 0">Actualizar</button>
+
+  <button   mat-raised-button color="primary"
+  [disabled]="!formColab.valid" (click)="createCollaborator()" *ngIf="!(idUpdateFirebase.length > 0)">Crear</button>
+
+</form>

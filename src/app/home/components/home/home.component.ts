@@ -81,10 +81,11 @@ export class HomeComponent implements OnInit {
     this.sliderService.getAllSliders().subscribe(resp =>{
       this.sliders = resp.map((e:any) => {
         return {
-            title: e.payload.doc.data().titulo,
-            content: e.payload.doc.data().contenido,
+            titulo: e.payload.doc.data().titulo,
+            contenido: e.payload.doc.data().contenido,
             background: e.payload.doc.data().background,
-            url: e.payload.doc.data().url
+            url: e.payload.doc.data().url,
+            idFirebase: e.payload.doc.id
         }
       })
     })

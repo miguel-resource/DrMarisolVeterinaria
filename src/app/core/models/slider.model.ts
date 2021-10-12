@@ -1,6 +1,7 @@
 export interface Slider {
-  title: string;
-  content: string;
+  titulo: string;
+  contenido: string;
   background: string;
   url: string;
+  idFirebase: string;
 }

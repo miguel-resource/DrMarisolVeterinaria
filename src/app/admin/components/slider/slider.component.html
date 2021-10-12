@@ -1,0 +1,45 @@
+<div class="slider-intro">
+  <h3>Sliders</h3>
+  <button class="create-slider" mat-raised-button (click)="openCreate()">Crear un nuevo slider</button>
+</div>
+
+<table mat-table [dataSource]="sliders" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="title">
+    <th mat-header *matHeaderCellDef>Título</th>
+    <td mat-cell *matCellDef="let item">{{ item.titulo }}</td>
+  </ng-container>
+  <ng-container matColumnDef="content">
+    <th mat-header *matHeaderCellDef>Contenido</th>
+    <td mat-cell *matCellDef="let item">{{ item.contenido }}</td>
+  </ng-container>
+  <ng-container matColumnDef="background">
+    <th mat-header *matHeaderCellDef>Background</th>
+    <td mat-cell *matCellDef="let item">
+      <div class="image-cell">
+        <img src="{{ item.background }}" alt="sldier veterinaria dra. marisol">
+      </div>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="url">
+    <th mat-header *matHeaderCellDef>Dirección (No obligatoria)</th>
+    <td mat-cell *matCellDef="let item">
+      {{ item.url }}
+      <div *ngIf="!(item.url.length > 0)">
+        Null
+      </div>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <th mat-header *matHeaderCellDef>Acciones</th>
+    <td mat-cell *matCellDef="let item" class="buttons">
+      <button classs="buttonEdit" mat-button color="primary" (click)="update(item)">Editar</button>
+      <button mat-raised-button color="warn" (click)="delete(item)">Eliminar</button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

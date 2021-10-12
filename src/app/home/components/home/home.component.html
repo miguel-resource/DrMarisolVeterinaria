@@ -8,8 +8,8 @@
     <div id="home-slider">
       <swiper  class="slider-principal" [slidesPerView]="1" [spaceBetween]="30" [navigation]="true" [pagination]="{ clickable: true }">
         <ng-template class="swiper-slide" swiperSlide *ngFor="let slider of sliders" style="background-image: url('{{ slider.background }}');">
-          <div class="title">{{ slider.title }}</div>
-          <div class="content">{{ slider.content }}</div>
+          <div class="title">{{ slider.titulo }}</div>
+          <div class="content">{{ slider.contenido }}</div>
           <button *ngIf="slider.url.length > 0" class="btn btn-"mat-raised-button routerLink="post/{{ slider.url }}">LINK</button>
         </ng-template>
       </swiper>

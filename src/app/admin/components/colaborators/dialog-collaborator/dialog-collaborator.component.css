@@ -1,0 +1,80 @@
+form {
+  width:  100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+form label {
+  display: block;
+  font-family:'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+form i{
+  position: absolute;
+  padding: 10px;
+  padding-right: 2px;
+  min-width: 20px;
+  line-height: 20px;
+  font-size: 20px;
+  color: #082e61;
+}
+
+form i:last-child {
+  position: relative;
+  padding: 0px;
+  font-size:22px;
+  line-height: 0px;
+  color: #082e61;
+}
+
+form #reload {
+  background: none;
+}
+
+form input,
+form textarea{
+  padding: 10px;
+  padding-left: 13%;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+form img {
+  display: block;
+  margin: 0 auto;
+  height: 10em;
+  border-radius: 10%;
+  width: 70%;
+  box-shadow: 2px 2px 4px #ccc;
+}
+
+
+
+form button {
+  background-color: #082e61;
+  margin: 0 auto;
+  margin-top: 20px;
+  left: 50%;
+}
+
+
+form span {
+  color: red;
+  font-size: 12px;
+}
+
+.rotatable {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.rotated90 {
+  transform:rotate(90deg);
+  -webkit-transform:rotate(90deg);
+  -moz-transform:rotate(90deg);
+  -o-transform:rotate(90deg);
+}

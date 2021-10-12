@@ -3,11 +3,11 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar>Menú</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/admin">Colaboradores</a>
-      <a mat-list-item routerLink="/admin/create">Crear un post</a>
-      <a mat-list-item routerLink="/admin/posts">Listado de posts</a>
+      <a mat-list-item routerLink="/admin/slider">Sliders</a>
+      <a mat-list-item routerLink="/admin/posts">Publicaciones</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

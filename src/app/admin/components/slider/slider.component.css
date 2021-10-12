@@ -1,0 +1,36 @@
+h3 {
+  text-align: center;
+}
+
+.create-slider {
+  background-color: #2d88ff;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+table  {
+  margin: 0 auto;
+  width: 95%;
+  text-align: center;
+}
+
+table .image-cell {
+  margin: 0 auto;
+  margin-top: 10px;
+  width: 100px;
+  height: auto;
+}
+
+table .image-cell img {
+  height: 100%
+}
+
+table .buttons {
+  margin : 0 auto;
+}
+
+table .buttons button {
+  margin-left: 2%;
+}

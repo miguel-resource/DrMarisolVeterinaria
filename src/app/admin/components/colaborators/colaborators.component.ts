@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 //Services
 import { CollaboratorsService } from './../../../core/service/collaborators/collaborators.service'
@@ -8,7 +7,8 @@ import { CollaboratorsService } from './../../../core/service/collaborators/coll
 import { Collaborator } from './../../../core/models/collaborators.model'
 
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from './dialog/dialog.component'
+import { DialogCollaboratorComponent } from './dialog-collaborator/dialog-collaborator.component'
+import { Back, Power1 } from 'gsap'
 
 @Component({
   selector: 'app-colaborators',
@@ -22,7 +22,6 @@ export class ColaboratorsComponent implements OnInit {
 
   constructor(
     private collaboratorsService: CollaboratorsService,
-    private formBuilder: FormBuilder,
     public dialog: MatDialog,
   ) { }
 
@@ -53,7 +52,7 @@ export class ColaboratorsComponent implements OnInit {
   }
 
   update(item:any):void {
-    let dialogRef = this.dialog.open(DialogComponent, {
+    let dialogRef = this.dialog.open(DialogCollaboratorComponent, {
       data: {
         nombre: item.nombre,
         ocupacion: item.ocupacion,
@@ -66,9 +65,8 @@ export class ColaboratorsComponent implements OnInit {
     })
   }
 
-  openCreate() {
-    const dialogRef = this.dialog.open(DialogComponent);
-    console.log("abrir create")
+  openCreate():void {
+    const dialogRef = this.dialog.open(DialogCollaboratorComponent);
   }
 
 

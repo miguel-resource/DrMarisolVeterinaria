@@ -10,8 +10,9 @@ import { PostsListComponent } from './components/posts-list/posts-list.component
 import { FormPostsComponent } from './components/form-posts/form-posts.component';
 import { PostEditComponent } from './components/post-edit/post-edit.component';
 import { ColaboratorsComponent } from './components/colaborators/colaborators.component';
-import { DialogComponent } from './components/colaborators/dialog/dialog.component';
-
+import { DialogCollaboratorComponent } from './components/colaborators/dialog-collaborator/dialog-collaborator.component';
+import { DialogSliderComponent } from './components/slider/dialog-slider/dialog-slider.component'
+import { SliderComponent } from './components/slider/slider.component';
 @NgModule({
   declarations: [
     NavComponent,
@@ -19,7 +20,9 @@ import { DialogComponent } from './components/colaborators/dialog/dialog.compone
     FormPostsComponent,
     PostEditComponent,
     ColaboratorsComponent,
-    DialogComponent,
+    DialogCollaboratorComponent,
+    SliderComponent,
+    DialogSliderComponent
   ],
   imports: [
     CommonModule,

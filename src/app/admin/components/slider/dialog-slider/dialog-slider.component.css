@@ -1,0 +1,57 @@
+form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+}
+
+form label {
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+form i  {
+  color: #082e61;
+  font-size: 17px;
+  line-height: 20px;
+  padding: 10px;
+  padding-right: 2px;
+  min-width: 20px;
+  position: absolute;
+}
+
+form input,
+form textarea {
+  padding: 10px;
+  padding-left: 10%;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+form #image {
+  border: 2px solid #ccc;
+  height: 11em;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  width: 80%;
+}
+
+form #image img {
+  height: 11em;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+form button {
+  background: #082e61;
+  width: 25%;
+}
+
+form span {
+  color: red;
+  font-size: 12px;
+}

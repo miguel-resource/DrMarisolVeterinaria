@@ -5,16 +5,17 @@
 
 h3 {
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .colaborators-intro button {
   background-color: #2d88ff !important;
-  left: 34%;
-  margin-top: 20px;
+  display: block;
+  margin: 0 auto;
 }
 
 table {
-  width: 95%;
+  width: 99%;
   margin: 0 auto;
   margin-top: 20px;
   text-align: center;
@@ -29,9 +30,17 @@ table .buttons {
   margin-left: 13%;
 }
 
+table th {
+  font-weight: 500;
+}
+
 table .buttonEdit {
   background-color: #2d88ff;
-  margin-left: 16% !important;
+
+}
+
+button {
+  margin-bottom: 10px;
 }
 
 
