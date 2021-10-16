@@ -6,6 +6,7 @@ import { PostsListComponent } from './components/posts-list/posts-list.component
 import { FormPostsComponent } from './components/form-posts/form-posts.component';
 import { ColaboratorsComponent } from './components/colaborators/colaborators.component'
 import { SliderComponent } from './components/slider/slider.component';
+import { PostBlogComponent } from './components/post-blog/post-blog.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,7 @@ const routes: Routes = [
       },
       {
         path: 'posts',
-        component: PostsListComponent
+        component: PostBlogComponent
       }
     ]
   }

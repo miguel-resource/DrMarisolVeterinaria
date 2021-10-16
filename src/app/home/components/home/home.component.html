@@ -2,15 +2,23 @@
 
 
   <div id="content-home">
+
     <!--
       SLIDER
     -->
     <div id="home-slider">
-      <swiper  class="slider-principal" [slidesPerView]="1" [spaceBetween]="30" [navigation]="true" [pagination]="{ clickable: true }">
-        <ng-template class="swiper-slide" swiperSlide *ngFor="let slider of sliders" style="background-image: url('{{ slider.background }}');">
-          <div class="title">{{ slider.titulo }}</div>
-          <div class="content">{{ slider.contenido }}</div>
-          <button *ngIf="slider.url.length > 0" class="btn btn-"mat-raised-button routerLink="post/{{ slider.url }}">LINK</button>
+      <swiper class="slider-principal" [slidesPerView]="1" [spaceBetween]="30" [navigation]="true"
+        [pagination]="{ clickable: true }">
+        <ng-template class="swiper-slide" swiperSlide *ngFor="let slider of sliders">
+          <div class="back" style="background-image:  url('{{ slider.background }}');">
+            <div class="content-slider">
+              <div class="title">{{ slider.titulo }}</div>
+              <div class="content">{{ slider.contenido }}</div>
+              <button *ngIf="slider.url.length > 0" class="btn btn-" mat-raised-button
+                routerLink="post/{{ slider.url }}">ENLACE <i class="fas fa-arrow-right"></i></button>
+            </div>
+
+          </div>
         </ng-template>
       </swiper>
     </div>
@@ -19,7 +27,7 @@
       Puntos de la página
     -->
     <div id="cards-intro">
-      <div class="card" *ngFor="let card of cards" >
+      <div class="card" *ngFor="let card of cards">
         <mat-card>
           <mat-card-header>
             <div mat-card-avatar class="icon-card">
@@ -43,22 +51,22 @@
     -->
     <div id="introduction">
 
-     <div class="tab-content">
+      <div class="tab-content">
         <div class="tab-introduction">
           <p>
             En la <span>Veterinaria Dra. Marisol</span> ofrecemos una atención especializada para tu mascota,
             contamos con los mejores epecialistas y ofrecemos una servicio de principio a fin para que
             cada uno de nuestros pequeños amigos se vaya seguro a casa.
           </p>
-          <img src="https://cdn.pixabay.com/photo/2020/03/26/10/35/domestic-cat-4969984_960_720.jpg" alt="atención veterinaria">
+          <img src="https://cdn.pixabay.com/photo/2020/03/26/10/35/domestic-cat-4969984_960_720.jpg"
+            alt="atención veterinaria">
         </div>
       </div>
 
 
       <div class="tab-content">
         <h3 class="title-principal">Ubicación</h3>
-        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas"
-        src="https://maps.google.com/maps?width=1254&amp;height=400&amp;hl=en&amp;q=Libres%20801%20Oaxaca%20
+        <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=1254&amp;height=400&amp;hl=en&amp;q=Libres%20801%20Oaxaca%20
         City+(Veterinaria%20Dra.%20Marisol)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
       </div>
 
@@ -66,7 +74,8 @@
         <h3 class="title-principal">Equipo de trabajo</h3>
         <div id="cowork">
 
-          <mat-card class="card" *ngFor="let item of collaborators">
+
+          <!-- <mat-card class="card" *ngFor="let item of collaborators">
             <mat-card-header>
               <div mat-card-avatar><i class="fas fa-user-md"></i></div>
               <mat-card-title>{{ item.nombre }}</mat-card-title>
@@ -79,6 +88,27 @@
               </button>
             </mat-card-actions>
           </mat-card>
+ -->
+
+       <swiper [slidesPerView]="2" [spaceBetween]="4" [centeredSlides]="true" [pagination]="{
+            clickable: true
+            }">
+             <ng-template swiperSlide *ngFor="let item of collaborators">
+              <mat-card class="card">
+                <mat-card-header>
+                  <div mat-card-avatar><i class="fas fa-user-md"></i></div>
+                  <mat-card-title>{{ item.nombre }}</mat-card-title>
+                  <mat-card-subtitle>{{ item.ocupacion }}</mat-card-subtitle>
+                </mat-card-header>
+                <img src="{{ item.foto }}" alt="{{ item.nombre }}">
+                <mat-card-actions>
+                  <button mat-stroked-button (click)="openDialog(item)">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </mat-card-actions>
+              </mat-card>
+            </ng-template>
+          </swiper>
 
         </div>
       </div>

@@ -2,72 +2,78 @@
   <div id="content-contact">
     <div id="inicio-contacto">
       <div id="inicio-text">
-          <div>
-            <h2 class="title-principal">Contacto</h2>
-            <p class="text-principal">
-              Para citas o para poder enviarnos alguna duda sobre alguno de nuestros productos o servicios
-              escríbenos en nuestras redes sociales o envíanos un correo en
-              el formulario que se encuentra abajo.
-            </p>
-            <div id="social-buttons">
-              <ul>
-                  <li class="social-insta"><a href="https://www.instagram.com/dra_marisol_veterinaria/" target="_blank"><i class="fab fa-instagram"></i></a></li>
-                  <li class="social-face"><a href="https://www.facebook.com/MvzMCC" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                  <li class="social-what"><a href="https://wa.me/9514168818" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
-              </ul>
-            </div>
+        <div>
+          <h2 class="title-principal">Contacto</h2>
+          <p class="text-principal">
+            Para citas o para poder enviarnos alguna duda sobre alguno de nuestros productos o servicios
+            escríbenos en nuestras redes sociales o envíanos un correo en
+            el formulario que se encuentra abajo.
+          </p>
+          <div id="social-buttons">
+            <ul>
+              <li class="social-insta"><a href="https://www.instagram.com/dra_marisol_veterinaria/" target="_blank"><i
+                    class="fab fa-instagram"></i></a></li>
+              <li class="social-face"><a href="https://www.facebook.com/MvzMCC" target="_blank"><i
+                    class="fab fa-facebook-f"></i></a></li>
+              <li class="social-what"><a href="https://wa.me/9514168818" target="_blank"><i
+                    class="fab fa-whatsapp"></i></a></li>
+            </ul>
           </div>
-          <div>
-            <div id="img-contacto">
-                <img src="./../../assets/img/llamada-telefonica.png" alt="contact-pet">
-            </div>
+        </div>
+        <div>
+          <div id="img-contacto">
+            <img src="./../../assets/img/llamada-telefonica.png" alt="contact-pet">
           </div>
+        </div>
       </div>
 
-        <div id="form-contact">
-            <div id="form-send">
-                <h3>Formulario</h3>
-                <mat-form-field appearance="fill">
-                    <mat-label>Nombre</mat-label>
-                    <input matInput [formControl]="nameField" required>
-                    <mat-error  *ngIf="nameField.invalid">{{getNameErrorMessage()}}</mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Correo electrónico</mat-label>
-                    <input [formControl]="emailField" matInput placeholder="kitty@example.com" required>
-                    <mat-error  *ngIf="emailField.invalid">{{getEmailErrorMessage()}}</mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="fill">
-                    <mat-label>Mensaje</mat-label>
-                    <textarea matInput [formControl]="textAreaField" required></textarea>
-                    <mat-error  *ngIf="textAreaField.invalid">{{getTextsErrorMessage()}}</mat-error>
-                </mat-form-field>
-                <button mat-fab [disabled]="emailField.invalid || textAreaField.invalid || nameField.invalid" color="primary" >
-                    <mat-icon>send</mat-icon>
-                </button>
-            </div>
-
-            <div id="text-contact">
-                <div id="title-contact">
-                    <h3>¿Necesitas una cotización o una cita?</h3>
-                </div>
-                <div id="sub-contact">
-                    <p>
-                        Únicamente damos consulta de manera presencial pero puedes enviarnos un correo y preguntar
-                        por algún servicio o producto, estamos para servirte
-                    </p>
-
-                    <ul>
-                        <li><i class="fas fa-home"></i><span>Libres 801, Jalatlaco, Oaxaca de Juárez México.</span></li>
-                        <li><i class="fas fa-mobile-alt"></i><span> 951 416 88 18</span></li>
-                        <li><i class="fas fa-envelope"></i><span>marisol@gmail.com</span></li>
-                    </ul>
-                </div>
-            </div>
-
-
-
+      <div id="form-contact">
+        <div id="form-send">
+          <h3>Formulario</h3>
+          <form action="https://email-server2021.herokuapp.com/send-email" method="POST">
+            <mat-form-field appearance="fill">
+              <mat-label>Nombre</mat-label>
+              <input name="name" matInput [formControl]="nameField" required>
+              <mat-error *ngIf="nameField.invalid">{{getNameErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Correo electrónico</mat-label>
+              <input name="email" [formControl]="emailField" matInput placeholder="kitty@example.com" required>
+              <mat-error *ngIf="emailField.invalid">{{getEmailErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+              <mat-label>Mensaje</mat-label>
+              <textarea name="message" matInput [formControl]="textAreaField" required></textarea>
+              <mat-error *ngIf="textAreaField.invalid">{{getTextsErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <button mat-fab type="submit" [disabled]="emailField.invalid || textAreaField.invalid || nameField.invalid"
+              color="primary">
+              <mat-icon>send</mat-icon>
+            </button>
+          </form>
         </div>
+
+        <div id="text-contact">
+          <div id="title-contact">
+            <h3>¿Necesitas una cotización o una cita?</h3>
+          </div>
+          <div id="sub-contact">
+            <p>
+              Únicamente damos consulta de manera presencial pero puedes enviarnos un correo y preguntar
+              por algún servicio o producto, estamos para servirte
+            </p>
+
+            <ul>
+              <li><i class="fas fa-home"></i><span>Libres 801, Jalatlaco, Oaxaca de Juárez México.</span></li>
+              <li><i class="fas fa-mobile-alt"></i><span> 951 416 88 18</span></li>
+              <li><i class="fas fa-envelope"></i><span>marisol@gmail.com</span></li>
+            </ul>
+          </div>
+        </div>
+
+
+
+      </div>
     </div>
   </div>
 </div>

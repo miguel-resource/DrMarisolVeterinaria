@@ -13,6 +13,7 @@ import { ColaboratorsComponent } from './components/colaborators/colaborators.co
 import { DialogCollaboratorComponent } from './components/colaborators/dialog-collaborator/dialog-collaborator.component';
 import { DialogSliderComponent } from './components/slider/dialog-slider/dialog-slider.component'
 import { SliderComponent } from './components/slider/slider.component';
+import { PostBlogComponent } from './components/post-blog/post-blog.component';
 @NgModule({
   declarations: [
     NavComponent,
@@ -22,7 +23,8 @@ import { SliderComponent } from './components/slider/slider.component';
     ColaboratorsComponent,
     DialogCollaboratorComponent,
     SliderComponent,
-    DialogSliderComponent
+    DialogSliderComponent,
+    PostBlogComponent
   ],
   imports: [
     CommonModule,

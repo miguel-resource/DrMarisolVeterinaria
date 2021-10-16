@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ContactComponent } from './components/contact/contact.component';
+import { MatInputModule } from "@angular/material/input";
+import { HttpClientModule } from "@angular/common/http";
 
 import { ContactRoutingModule } from './contact-routing.module';
 import { MaterialModule } from '../material/material.module';
@@ -15,7 +17,9 @@ import { MaterialModule } from '../material/material.module';
         CommonModule,
         MaterialModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatInputModule,
+        HttpClientModule
     ]
 })
 export class ContactModule{}
