@@ -1,0 +1,18 @@
+<div class="messages-content">
+
+  <mat-card class="example-card" *ngFor="let item of messages">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"><i class="fab fa-github"></i></div>
+      <mat-card-title>{{ item.nombre }}</mat-card-title>
+      <mat-card-subtitle>{{ item.estado | uppercase }} </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ item.mensaje }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button  color="primary">Responder</button>
+      <button mat-raised-button color="warn">Eliminar</button>
+    </mat-card-actions>
+  </mat-card>
+
+</div>

@@ -140,12 +140,17 @@
   color: #fff;
 }
 
-#form-contact #form-send mat-form-field input, textarea{
-    color: #4DABF7;
+:host /deep/ .mat-select-value-text {
+  color: #4DABF7 !important;
+}
+
+#form-contact #form-send mat-form-field input,
+textarea{
+  color: #4DABF7;
 }
 
 ::placeholder{
-    color: #ccc;
+  color: #ccc;
 }
 
 #form-contact #form-send button{

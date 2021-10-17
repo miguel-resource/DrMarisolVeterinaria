@@ -1,0 +1,15 @@
+.messages-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 96%;
+  margin: 0 auto;
+}
+
+.messages-content .mat-card {
+  margin: 5px;
+}
+
+.mat-card .mat-card-avatar i{
+  color: rgb(11, 11, 122);
+  font-size: 40px;
+}

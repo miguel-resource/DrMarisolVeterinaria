@@ -30,11 +30,17 @@
       <div id="form-contact">
         <div id="form-send">
           <h3>Formulario</h3>
-          <form action="https://email-server2021.herokuapp.com/send-email" method="POST">
             <mat-form-field appearance="fill">
               <mat-label>Nombre</mat-label>
               <input name="name" matInput [formControl]="nameField" required>
               <mat-error *ngIf="nameField.invalid">{{getNameErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field  appearance="fill">
+              <mat-label >Select</mat-label>
+              <mat-select name="select" required>
+                <mat-option value="cotizacion">Cotización</mat-option>
+                <mat-option value="sugerencias">Sugerencias</mat-option>
+              </mat-select>
             </mat-form-field>
             <mat-form-field appearance="fill">
               <mat-label>Correo electrónico</mat-label>
@@ -46,11 +52,10 @@
               <textarea name="message" matInput [formControl]="textAreaField" required></textarea>
               <mat-error *ngIf="textAreaField.invalid">{{getTextsErrorMessage()}}</mat-error>
             </mat-form-field>
-            <button mat-fab type="submit" [disabled]="emailField.invalid || textAreaField.invalid || nameField.invalid"
+            <button mat-fab [disabled]="emailField.invalid || textAreaField.invalid || nameField.invalid"
               color="primary">
               <mat-icon>send</mat-icon>
             </button>
-          </form>
         </div>
 
         <div id="text-contact">

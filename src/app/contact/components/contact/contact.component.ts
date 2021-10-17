@@ -12,6 +12,7 @@ export class ContactComponent implements OnInit {
   emailField: FormControl = new FormControl("", [Validators.required, Validators.email]);
   textAreaField: FormControl = new FormControl("", [Validators.required, Validators.maxLength(320)]);
   nameField: FormControl = new FormControl("", [Validators.required]);
+  select: FormControl = new FormControl("", [Validators.required]);
   formContact: FormGroup = new FormGroup({});
   submit: boolean = false;
   isLoading: boolean = false;
@@ -19,11 +20,12 @@ export class ContactComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private http: HttpClient
+    private http: HttpClient,
   ) {
 
     this.formContact = this.formBuilder.group({
       nameField: this.nameField,
+      select: this.select,
       emailField: this.emailField,
       textAreaField: this.textAreaField
     })
@@ -90,4 +92,6 @@ export class ContactComponent implements OnInit {
 
     return this.nameField.hasError('textArea')  ? 'Mensaje inválido' : '';
   }
+
+
 }

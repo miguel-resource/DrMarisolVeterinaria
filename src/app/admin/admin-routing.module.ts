@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { NavComponent } from './components/nav/nav.component';
-import { PostsListComponent } from './components/posts-list/posts-list.component';
-import { FormPostsComponent } from './components/form-posts/form-posts.component';
 import { ColaboratorsComponent } from './components/colaborators/colaborators.component'
 import { SliderComponent } from './components/slider/slider.component';
 import { PostBlogComponent } from './components/post-blog/post-blog.component';
+import { MessagesComponent } from './components/messages/messages.component';
+
 
 const routes: Routes = [
   {
@@ -24,6 +24,10 @@ const routes: Routes = [
       {
         path: 'posts',
         component: PostBlogComponent
+      },
+      {
+        path: 'messages',
+        component: MessagesComponent
       }
     ]
   }
