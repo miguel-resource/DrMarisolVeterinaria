@@ -54,7 +54,7 @@ export class SliderComponent implements OnInit {
 
 
   delete(item:any) {
-    if(confirm("Estás segur@ qué deseas eliminar a "+ item.nombre)) {
+    if(confirm("¿Estás segur@ qué deseas eliminar a "+ item.nombre+"?")) {
       this.sliderService.deleteSlider(item.id);
     }
   }

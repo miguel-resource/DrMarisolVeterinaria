@@ -10,8 +10,8 @@
       <p>{{ item.mensaje }}</p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button  color="primary">Responder</button>
-      <button mat-raised-button color="warn">Eliminar</button>
+      <a mat-button href="mailto:{{ item.email }} "  color="primary">Responder</a>
+      <button mat-raised-button (click)="deleteMessage(item)" color="warn">Eliminar</button>
     </mat-card-actions>
   </mat-card>
 

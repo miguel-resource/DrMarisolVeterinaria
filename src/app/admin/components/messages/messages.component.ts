@@ -22,10 +22,17 @@ export class MessagesComponent implements OnInit {
           nombre: e.payload.doc.data().nombre,
           estado: e.payload.doc.data().estado,
           email: e.payload.doc.data().email,
-          mensaje: e.payload.doc.data().mensaje
+          mensaje: e.payload.doc.data().mensaje,
+          idFirebase : e.payload.doc.id
         }
       })
     })
+  }
+
+  deleteMessage(item: any) {
+    if(confirm("¿Estás segur@ qué deseas eliminar este mensaje?")) {
+      this.formContactService.deleteCollaborator(item.idFirebase)
+    }
   }
 
 }

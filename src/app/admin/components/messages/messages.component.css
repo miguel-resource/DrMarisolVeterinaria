@@ -7,9 +7,15 @@
 
 .messages-content .mat-card {
   margin: 5px;
+  min-height: 253px;
 }
 
 .mat-card .mat-card-avatar i{
   color: rgb(11, 11, 122);
   font-size: 40px;
+}
+
+
+.mat-card .mat-card-content {
+  height: 45%;
 }

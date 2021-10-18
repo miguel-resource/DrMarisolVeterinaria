@@ -144,6 +144,10 @@
   color: #4DABF7 !important;
 }
 
+::ng-deep .mat-select-arrow {
+  color: #fff;
+}
+
 #form-contact #form-send mat-form-field input,
 textarea{
   color: #4DABF7;

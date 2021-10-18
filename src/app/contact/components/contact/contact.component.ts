@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-
+import { FormContactService } from './../../../core/service/form-contact/form-contact.service'
 @Component({
   selector: 'app-contact',
   templateUrl: '../contact/contact.component.html',
@@ -10,9 +10,9 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 export class ContactComponent implements OnInit {
 
   emailField: FormControl = new FormControl("", [Validators.required, Validators.email]);
-  textAreaField: FormControl = new FormControl("", [Validators.required, Validators.maxLength(320)]);
+  textAreaField: FormControl = new FormControl("", [Validators.required, Validators.maxLength(150)]);
   nameField: FormControl = new FormControl("", [Validators.required]);
-  select: FormControl = new FormControl("", [Validators.required]);
+  selectField: FormControl = new FormControl("", [Validators.required]);
   formContact: FormGroup = new FormGroup({});
   submit: boolean = false;
   isLoading: boolean = false;
@@ -21,13 +21,14 @@ export class ContactComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
+    private formContactService: FormContactService,
   ) {
 
     this.formContact = this.formBuilder.group({
-      nameField: this.nameField,
-      select: this.select,
-      emailField: this.emailField,
-      textAreaField: this.textAreaField
+      nombre: this.nameField,
+      email: this.emailField,
+      mensaje: this.textAreaField,
+      estado: this.selectField
     })
 
   }
@@ -35,39 +36,6 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit() {
-    if (this.formContact.status == "VALID") {
-      this.formContact.disable(); // disable the form if it's valid to disable multiple submissions
-      var formData: any = new FormData();
-      formData.append("nameField", this.nameField.value);
-      formData.append("email", this.emailField.value);
-      formData.append("message", this.textAreaField.value);
-
-      this.isLoading = true; // sending the post request async so it's in progress
-      this.submit = false; // hide the response message on multiple submits
-      this.http.post("YOUR GOOGLE WEB APP URL HERE", formData).subscribe(
-        (response:any) => {
-          // choose the response message
-          if (response["result"] == "success") {
-            this.responseMessage = "Thanks for the message! I'll get back to you soon!";
-          } else {
-            this.responseMessage = "Oops! Something went wrong... Reload the page and try again.";
-          }
-          this.formContact.enable(); // re enable the form after a success
-          this.submit = true; // show the response message
-          this.isLoading = false; // re enable the submit button
-          console.log(response);
-        },
-        (error) => {
-          this.responseMessage = "Oops! An error occurred... Reload the page and try again.";
-          this.formContact.enable(); // re enable the form after a success
-          this.submit = true; // show the response message
-          this.isLoading = false; // re enable the submit button
-          console.log(error);
-        }
-      );
-    }
-  }
 
   getEmailErrorMessage() {
     if ((this.emailField.hasError('required'))) {
@@ -93,5 +61,22 @@ export class ContactComponent implements OnInit {
     return this.nameField.hasError('textArea')  ? 'Mensaje inválido' : '';
   }
 
+  getSelectMessage() {
+    if((this.selectField.hasError('required'))) {
+      return 'Debes ingresar una opción'
+    }
+
+    return this.selectField.hasError('select') ? 'Selección invalida' : "";
+  }
+
+  createMessage() {
+    console.log(this.formContact.value);
+    this.formContactService.createMessage(this.formContact.value).then(() => {
+      this.formContact.reset();
+      alert("Mensaje enviado con éxito");
+    }).catch(() => {
+      alert("No se pudo envíar su mensaje")
+    })
+  }
 
 }
