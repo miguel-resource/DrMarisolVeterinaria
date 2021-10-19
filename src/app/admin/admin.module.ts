@@ -15,6 +15,7 @@ import { DialogSliderComponent } from './components/slider/dialog-slider/dialog-
 import { SliderComponent } from './components/slider/slider.component';
 import { PostBlogComponent } from './components/post-blog/post-blog.component';
 import { MessagesComponent } from './components/messages/messages.component';
+
 @NgModule({
   declarations: [
     NavComponent,
@@ -26,7 +27,7 @@ import { MessagesComponent } from './components/messages/messages.component';
     SliderComponent,
     DialogSliderComponent,
     PostBlogComponent,
-    MessagesComponent
+    MessagesComponent,
   ],
   imports: [
     CommonModule,

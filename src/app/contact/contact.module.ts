@@ -4,6 +4,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ContactComponent } from './components/contact/contact.component';
 import { MatInputModule } from "@angular/material/input";
 import { HttpClientModule } from "@angular/common/http";
+import { ShowdownModule } from 'ngx-showdown';
 
 import { ContactRoutingModule } from './contact-routing.module';
 import { MaterialModule } from '../material/material.module';
@@ -19,7 +20,8 @@ import { MaterialModule } from '../material/material.module';
         FormsModule,
         ReactiveFormsModule,
         MatInputModule,
-        HttpClientModule
+        HttpClientModule,
+        ShowdownModule
     ]
 })
 export class ContactModule{}

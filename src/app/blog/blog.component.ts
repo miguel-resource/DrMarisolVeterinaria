@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
+  text: string = "";
   constructor() { }
 
   ngOnInit(): void {

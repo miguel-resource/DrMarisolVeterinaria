@@ -27,7 +27,7 @@ const routes:Routes = [
             },
             {
                 path: 'blog',
-                component: BlogComponent,
+                loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
             },
             {
                 path: 'contact',

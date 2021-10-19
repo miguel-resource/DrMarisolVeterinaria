@@ -22,7 +22,6 @@ import { MotionPathPlugin } from 'gsap/all';
   declarations: [
     AppComponent,
     PageNotFoundComponent,
-    BlogComponent,
     LayoutComponent,
   ],
   imports: [
