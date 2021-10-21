@@ -33,7 +33,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatListModule,
     MatTableModule,
     MatTabsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
   ],
   exports: [
     MatButtonModule,
@@ -48,7 +49,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatListModule,
     MatTableModule,
     MatTabsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
   ]
 })
 export class MaterialModule {

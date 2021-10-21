@@ -1,0 +1,25 @@
+.red {
+  color:red;
+}
+h3 {
+  text-align: center;
+}
+
+.create-post {
+  background-color: #2d88ff;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 96%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+th {
+  font-size: 18px;
+}
+

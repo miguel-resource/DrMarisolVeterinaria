@@ -35,10 +35,8 @@ export class DialogCollaboratorComponent implements OnInit {
     })
 
     this.imageFoto = this.data.foto;
-    console.log(this.imageFoto);
 
     this.idUpdateFirebase = this.data.idFirebase;
-    console.log(this.data.idFirebase)
 
     this.formColab.patchValue({
       nombre: this.data.nombre,

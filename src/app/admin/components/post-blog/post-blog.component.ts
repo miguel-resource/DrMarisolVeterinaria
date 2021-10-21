@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { AngularFireStorage } from '@angular/fire/storage';
-import { Observable } from 'rxjs';
-import { finalize } from 'rxjs/operators';
+
+import { PostBlogService } from './../../../core/service/post-blog/post-blog.service'
+import { Post } from '../../../core/models/post.model'
+
+
+//Dialog here >>>
+import { MatDialog } from '@angular/material/dialog';
+import { DialogPostComponent } from './dialog-post/dialog-post.component'
 
 @Component({
   selector: 'app-post-blog',
@@ -11,40 +15,62 @@ import { finalize } from 'rxjs/operators';
 })
 export class PostBlogComponent implements OnInit {
 
-  uploadProgress!: Observable<any>;
-  uploadURL!: Observable<string>;
+
+  posts: Post[] = [];
+  displayedColumns: string[] = ['id','nombre', 'tipo', 'fecha', 'acciones']
 
 
   constructor(
-    private storage: AngularFireStorage
+    private postBlogService: PostBlogService,
+    private dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
+    this.postBlogService.getAllPosts().subscribe(resp => {
+      this.posts = resp.map((e:any) => {
+        return {
+          nombre: e.payload.doc.data().nombre,
+          tipo: e.payload.doc.data().tipo,
+          fecha: e.payload.doc.data().fecha,
+          caratula: e.payload.doc.data().caratula,
+          contenido: e.payload.doc.data().contenido,
+          idFirebase: e.payload.doc.id
+        }
+      })
+    }, error => {
+      console.error(error);
+    })
+
   }
 
-  upload(event: any) {
-    // Get input file
-    const file = event.target.files[0];
-
-    // Generate a random ID
-    const randomId = Math.random().toString(36).substring(2);
-    console.log(randomId);
-    const filepath = `images/${randomId}`;
-
-    const fileRef = this.storage.ref(filepath);
-
-    // Upload image
-    const task = this.storage.upload(filepath, file);
-
-    // Observe percentage changes
-    this.uploadProgress = task.percentageChanges();
-
-    // Get notified when the download URL is available
-    task.snapshotChanges().pipe(
-      finalize(() => this.uploadURL = fileRef.getDownloadURL())
-    ).subscribe();
-
-    console.log(file);
+  delete(id:any) {
+    if(confirm("¿Estás segur@ que quieres eliminar este post?")) {
+      this.postBlogService.deletePost(id);
+    }
   }
+
+  update(item:any)  {
+    let dialogRef = this.dialog.open(DialogPostComponent, {
+      data: {
+        nombre: item.nombre,
+        tipo: item.tipo,
+        fecha: item.fecha,
+        caratula: item.caratula,
+        contenido: item.contenido,
+        idFirebase: item.idFirebase
+      }
+    })
+  }
+
+  openCreate():void {
+    const dialogRef = this.dialog.open(DialogPostComponent, {
+      width: '1700px'
+    });
+  }
+
+  test(item:any) {
+    console.log(item.idFirebase);
+  }
+
 
 }

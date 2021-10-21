@@ -15,7 +15,8 @@ import { DialogSliderComponent } from './components/slider/dialog-slider/dialog-
 import { SliderComponent } from './components/slider/slider.component';
 import { PostBlogComponent } from './components/post-blog/post-blog.component';
 import { MessagesComponent } from './components/messages/messages.component';
-
+import { ShowdownModule } from 'ngx-showdown';
+import { DialogPostComponent } from './components/post-blog/dialog-post/dialog-post.component';
 @NgModule({
   declarations: [
     NavComponent,
@@ -28,6 +29,7 @@ import { MessagesComponent } from './components/messages/messages.component';
     DialogSliderComponent,
     PostBlogComponent,
     MessagesComponent,
+    DialogPostComponent,
   ],
   imports: [
     CommonModule,
@@ -35,7 +37,8 @@ import { MessagesComponent } from './components/messages/messages.component';
     ReactiveFormsModule,
     MaterialModule,
     LayoutModule,
-    FormsModule
+    FormsModule,
+    ShowdownModule
   ]
 })
 export class AdminModule { }

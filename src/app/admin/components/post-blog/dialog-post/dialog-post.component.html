@@ -1,0 +1,21 @@
+<div class="dialog-post">
+  <mat-tab-group>
+
+    <mat-tab label="Etiquetas">
+
+      <form [formGroup]="formPost">
+        <div class="form">
+          <label>Titulo <span>*</span></label>
+          <i class="fas fa-heading"></i>
+          <input type="text" formControlName="titulo" placeholder="Título" required>
+        </div>
+
+      </form>
+
+    </mat-tab>
+
+    <mat-tab label="Contenido">
+    </mat-tab>
+
+  </mat-tab-group>
+</div>
