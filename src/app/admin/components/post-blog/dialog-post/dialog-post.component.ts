@@ -1,9 +1,14 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Timestamp } from 'rxjs/internal/operators/timestamp';
+import { AngularFireStorage } from '@angular/fire/storage';
 
 import { Post } from './../../../../core/models/post.model'
 import { PostBlogService } from './../../../../core/service/post-blog/post-blog.service'
+
+import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators';
 
 @Component({
   selector: 'app-dialog-post',
@@ -13,10 +18,13 @@ import { PostBlogService } from './../../../../core/service/post-blog/post-blog.
 export class DialogPostComponent implements OnInit {
 
   formPost: FormGroup = new FormGroup({});
-  idUpdateFirebase:string = "";
-
+  idUpdateFirebase:string = ""
+  tipo:string = "";
+  date: any;
+  image: string = "";
 
   constructor(
+    private angularFireStorage: AngularFireStorage,
     private postBlogService: PostBlogService,
     private formBuilder: FormBuilder,
     private dialogRef:  MatDialogRef<DialogPostComponent>,
@@ -32,6 +40,9 @@ export class DialogPostComponent implements OnInit {
       contenido: ['', Validators.required],
     })
 
+    this.tipo = this.data.tipo;
+    this.date = this.data.fecha;
+    this.image = this.data.caratula;
 
     this.formPost.patchValue({
       nombre: this.data.nombre,

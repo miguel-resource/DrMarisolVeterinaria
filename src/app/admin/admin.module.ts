@@ -17,6 +17,8 @@ import { PostBlogComponent } from './components/post-blog/post-blog.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { ShowdownModule } from 'ngx-showdown';
 import { DialogPostComponent } from './components/post-blog/dialog-post/dialog-post.component';
+import { AngularFireStorageModule} from '@angular/fire/storage';
+
 @NgModule({
   declarations: [
     NavComponent,
@@ -38,7 +40,8 @@ import { DialogPostComponent } from './components/post-blog/dialog-post/dialog-p
     MaterialModule,
     LayoutModule,
     FormsModule,
-    ShowdownModule
+    ShowdownModule,
+    AngularFireStorageModule
   ]
 })
 export class AdminModule { }

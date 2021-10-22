@@ -18,7 +18,7 @@ export class PostBlogComponent implements OnInit {
 
   posts: Post[] = [];
   displayedColumns: string[] = ['id','nombre', 'tipo', 'fecha', 'acciones']
-
+  date: number = Date.now();
 
   constructor(
     private postBlogService: PostBlogService,
@@ -41,6 +41,9 @@ export class PostBlogComponent implements OnInit {
       console.error(error);
     })
 
+
+    console.log(this.date);
+
   }
 
   delete(id:any) {
@@ -51,13 +54,14 @@ export class PostBlogComponent implements OnInit {
 
   update(item:any)  {
     let dialogRef = this.dialog.open(DialogPostComponent, {
+      width: '1700px',
       data: {
         nombre: item.nombre,
         tipo: item.tipo,
-        fecha: item.fecha,
+        fecha: this.dateActuall(),
         caratula: item.caratula,
         contenido: item.contenido,
-        idFirebase: item.idFirebase
+        idFirebase: item.idFirebase,
       }
     })
   }
@@ -70,6 +74,13 @@ export class PostBlogComponent implements OnInit {
 
   test(item:any) {
     console.log(item.idFirebase);
+  }
+
+  dateActuall() {
+    if(true) {
+      return this.date;
+    }
+
   }
 
 

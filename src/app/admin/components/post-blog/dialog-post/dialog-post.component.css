@@ -1,0 +1,41 @@
+form {
+  width: 100%;
+
+}
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 10px;
+}
+
+.mat-form-field {
+  width: 80%;
+}
+
+.mat-icon {
+  color: #5a7ca8
+}
+
+.disabled{
+  color: #ccc;
+}
+
+button {
+  background-color: #2d88ff;
+  color: #fff;
+  width: 30%;
+  height: 55%;
+}
+
+.image-item {
+  width: 50%;
+  height: 140px;
+  border: 2px dashed #5a7ca8;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.image-item img {
+  width:100%;
+  height: 136px;
+}

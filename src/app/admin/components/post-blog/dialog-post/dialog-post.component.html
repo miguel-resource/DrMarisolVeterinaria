@@ -1,21 +1,60 @@
 <div class="dialog-post">
   <mat-tab-group>
 
-    <mat-tab label="Etiquetas">
+    <mat-tab label="Etiquetas" class="tab-etiquetas">
 
-      <form [formGroup]="formPost">
+      <form [formGroup]="formPost" >
         <div class="form">
-          <label>Titulo <span>*</span></label>
-          <i class="fas fa-heading"></i>
-          <input type="text" formControlName="titulo" placeholder="Título" required>
-        </div>
 
+
+          <div class="form-item">
+            <mat-form-field appearance="fill">
+              <mat-label>Título</mat-label>
+              <input formControlName="nombre" matInput>
+            </mat-form-field>
+          </div>
+
+
+
+          <div class="form-item">
+            <div class="image-item">
+              <img src="{{ image }}" alt="">
+            </div>
+            <mat-form-field>
+              <mat-label>Portada URL</mat-label>
+              <input type="text" formControlName="caratula" matInput>
+            </mat-form-field>
+          </div>
+
+          <div class="form-item">
+            <mat-form-field style="padding-left: 2%;">
+              <mat-label>Tipo</mat-label>
+                <mat-select [(value)]="tipo">
+                  <mat-option value="Alimentos">Alimentos</mat-option>
+                  <mat-option value="Primeros auxilios">Primeros auxilios</mat-option>
+                  <mat-option value="Tips">Tips</mat-option>
+                  <mat-option value="Promociones">Promociones</mat-option>
+                  <mat-option value="Gatos">Gatos</mat-option>
+                  <mat-option value="Perros">Perros</mat-option>
+                </mat-select>
+
+            </mat-form-field>
+          </div>
+
+
+
+          <button mat-raised-button >Actualizar</button>
+
+
+        </div>
       </form>
 
     </mat-tab>
 
     <mat-tab label="Contenido">
-    </mat-tab>
 
+
+
+    </mat-tab>
   </mat-tab-group>
 </div>

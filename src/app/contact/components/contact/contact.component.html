@@ -53,6 +53,7 @@
               <textarea name="message" matInput [formControl]="textAreaField" required></textarea>
               <mat-error *ngIf="textAreaField.invalid">{{getTextsErrorMessage()}}</mat-error>
             </mat-form-field>
+
             <button mat-fab [disabled]="!formContact.valid" (click)="createMessage()"
               color="primary">
               <mat-icon>send</mat-icon>
