@@ -1,0 +1,12 @@
+.posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 85%;
+  margin: 0 auto;
+}
+
+.blog-title {
+  width: 95%;
+  height: 85px;
+  margin: 0 auto;
+}

@@ -22,14 +22,14 @@
             </div>
             <mat-form-field>
               <mat-label>Portada URL</mat-label>
-              <input type="text" formControlName="caratula" matInput>
+              <input [(ngModel)]="image" type="text" formControlName="caratula" matInput>
             </mat-form-field>
           </div>
 
           <div class="form-item">
             <mat-form-field style="padding-left: 2%;">
               <mat-label>Tipo</mat-label>
-                <mat-select [(value)]="tipo">
+                <mat-select formControlName="tipo">
                   <mat-option value="Alimentos">Alimentos</mat-option>
                   <mat-option value="Primeros auxilios">Primeros auxilios</mat-option>
                   <mat-option value="Tips">Tips</mat-option>
@@ -43,9 +43,8 @@
 
 
 
-          <button mat-raised-button *ngIf="idUpdateFirebase.length > 0"
-          [disabled]="!formPost.valid">Actualizar</button>
-          <button [disabled]="!formPost.valid"mat-raised-button *ngIf="!(idUpdateFirebase.length > 0)">Crear</button>
+          <button mat-raised-button *ngIf="(idUpdateFirebase.length > 0)"[disabled]="!formPost.valid">Actualizar</button>
+          <button [disabled]="!formPost.valid" mat-raised-button *ngIf="!(idUpdateFirebase.length > 0)" (click)="createPost()">Crear</button>
 
 
         </div>
@@ -56,14 +55,16 @@
     <mat-tab label="Contenido">
       <div class="content-item">
         <div class="content-input">
-          <mat-form-field appearance="fill">
-            <mat-label> Contenido del blog</mat-label>
-            <textarea matInput [(ngModel)]="text" rows="23"></textarea>
-          </mat-form-field>
+          <form [formGroup]="formPost">
+            <mat-form-field appearance="fill">
+              <mat-label> Contenido del blog</mat-label>
+              <textarea matInput formControlName="contenido"  [(ngModel)]="text" rows="23"></textarea>
+            </mat-form-field>
+          </form>
         </div>
 
         <div class="content-output">
-          <showdown [value]="text" style="font-size: 15px;"> </showdown>
+          <showdown emoji [value]="text" style="font-size: 15px;"> </showdown>
         </div>
 
       </div>

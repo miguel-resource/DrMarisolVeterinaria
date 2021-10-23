@@ -5,10 +5,12 @@ import { BlogRoutingModule } from './blog-routing.module'
 import { MaterialModule } from '../material/material.module';
 import { ShowdownModule } from 'ngx-showdown';
 import {FormsModule} from '@angular/forms';
+import { PostComponent } from './components/post/post.component';
 
 @NgModule({
   declarations: [
-    BlogComponent
+    BlogComponent,
+    PostComponent
   ],
   imports: [
     BlogRoutingModule,

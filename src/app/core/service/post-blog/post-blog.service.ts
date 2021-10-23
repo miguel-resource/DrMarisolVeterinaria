@@ -13,7 +13,7 @@ export class PostBlogService {
 
 
   getAllPosts() {
-    return this.firestore.collection("posts").snapshotChanges();
+    return this.firestore.collection("posts", ref => ref.orderBy("fecha", "desc")).snapshotChanges();
   }
 
   getPost(id:any) {
@@ -31,4 +31,6 @@ export class PostBlogService {
   deletePost(id:any) {
     return this.firestore.collection("posts").doc(id).delete();
   }
+
+
 }

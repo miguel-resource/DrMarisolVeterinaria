@@ -18,7 +18,7 @@ export class PostBlogComponent implements OnInit {
 
   posts: Post[] = [];
   displayedColumns: string[] = ['id','nombre', 'tipo', 'fecha', 'acciones']
-  date: number = Date.now();
+  date: number = Math.floor(Date.now() / 1000);
 
   constructor(
     private postBlogService: PostBlogService,
@@ -42,7 +42,6 @@ export class PostBlogComponent implements OnInit {
     })
 
 
-    console.log(this.date);
 
   }
 
@@ -58,7 +57,7 @@ export class PostBlogComponent implements OnInit {
       data: {
         nombre: item.nombre,
         tipo: item.tipo,
-        fecha: this.dateActuall(),
+        fecha: this.date,
         caratula: item.caratula,
         contenido: item.contenido,
         idFirebase: item.idFirebase,

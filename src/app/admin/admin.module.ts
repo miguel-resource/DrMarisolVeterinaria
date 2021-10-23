@@ -41,7 +41,7 @@ import { AngularFireStorageModule} from '@angular/fire/storage';
     MaterialModule,
     LayoutModule,
     FormsModule,
-    ShowdownModule,
+    ShowdownModule.forRoot({emoji: true, noHeaderId:true, flavor: 'github' }),
     AngularFireStorageModule
   ]
 })

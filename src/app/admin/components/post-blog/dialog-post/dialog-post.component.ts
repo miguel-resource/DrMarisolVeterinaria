@@ -36,25 +36,56 @@ export class DialogPostComponent implements OnInit {
     this.formPost = this.formBuilder.group({
       nombre: ['', Validators.required],
       tipo: ['', Validators.required],
-      fecha: ['', Validators.required],
+      fecha: [''],
       caratula: ['', Validators.required],
       contenido: ['', Validators.required],
     })
 
-    this.tipo = this.data.tipo;
-    this.date = this.data.fecha;
-    this.image = this.data.caratula;
-    this.text = this.data.contenido;
+    if(this.data !== null)  {
 
-    this.formPost.patchValue({
-      nombre: this.data.nombre,
-      tipo: this.data.tipo,
-      fecha: this.data.fecha,
-      caratula: this.data.caratula,
-      contenido: this.data.contenido,
+      this.tipo = this.data.tipo;
+      this.date = this.data.fecha;
+      this.image = this.data.caratula;
+      this.text = this.data.contenido;
+      this.idUpdateFirebase = this.data.idFirebase;
+
+
+      this.formPost.patchValue({
+        nombre: this.data.nombre,
+        tipo: this.data.tipo,
+        fecha: this.data.fecha,
+        caratula: this.data.caratula,
+        contenido: this.data.contenido,
+      })
+    }else {
+      console.log(Math.floor(Date.now() / 1000))
+      this.formPost.patchValue({
+        fecha: Math.floor(Date.now() / 1000)
+      })
+    }
+
+
+  }
+
+  updatePost() {
+    this.postBlogService.updatePost(this.idUpdateFirebase, this.formPost.value)
+    .then(result => {
+      this.formPost.reset();
+      this.dialogRef.close();
+    }).catch(error =>  {
+      console.error(error);
     })
   }
 
 
+  createPost() {
+    this.postBlogService.createPost(this.formPost.value)
+    .then(result => {
+      this.formPost.reset();
+      this.dialogRef.close();
+    }).catch(error => {
+      console.error(error);
+    })
+  }
 
 }
