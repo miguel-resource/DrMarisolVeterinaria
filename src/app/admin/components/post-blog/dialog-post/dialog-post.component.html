@@ -43,7 +43,9 @@
 
 
 
-          <button mat-raised-button >Actualizar</button>
+          <button mat-raised-button *ngIf="idUpdateFirebase.length > 0"
+          [disabled]="!formPost.valid">Actualizar</button>
+          <button [disabled]="!formPost.valid"mat-raised-button *ngIf="!(idUpdateFirebase.length > 0)">Crear</button>
 
 
         </div>
@@ -52,9 +54,19 @@
     </mat-tab>
 
     <mat-tab label="Contenido">
+      <div class="content-item">
+        <div class="content-input">
+          <mat-form-field appearance="fill">
+            <mat-label> Contenido del blog</mat-label>
+            <textarea matInput [(ngModel)]="text" rows="23"></textarea>
+          </mat-form-field>
+        </div>
 
+        <div class="content-output">
+          <showdown [value]="text" style="font-size: 15px;"> </showdown>
+        </div>
 
-
+      </div>
     </mat-tab>
   </mat-tab-group>
 </div>

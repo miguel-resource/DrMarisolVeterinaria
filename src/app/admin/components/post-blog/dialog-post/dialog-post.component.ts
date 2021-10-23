@@ -22,6 +22,7 @@ export class DialogPostComponent implements OnInit {
   tipo:string = "";
   date: any;
   image: string = "";
+  text: string = "";
 
   constructor(
     private angularFireStorage: AngularFireStorage,
@@ -43,6 +44,7 @@ export class DialogPostComponent implements OnInit {
     this.tipo = this.data.tipo;
     this.date = this.data.fecha;
     this.image = this.data.caratula;
+    this.text = this.data.contenido;
 
     this.formPost.patchValue({
       nombre: this.data.nombre,
