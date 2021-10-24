@@ -30,6 +30,7 @@
     "hammerjs": "^2.0.8",
     "igniteui-angular": "^12.1.1",
     "jszip": "^3.6.0",
+    "mdb-angular-ui-kit": "^1.4.0",
     "mdb-ui-kit": "^3.9.0",
     "minireset.css": "~0.0.4",
     "ng-showdown": "^1.1.0",

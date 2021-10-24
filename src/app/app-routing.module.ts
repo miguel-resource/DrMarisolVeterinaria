@@ -8,6 +8,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
 
 import { AdminGuard } from './admin.guard';
 import { HomeComponent } from './home/components/home/home.component';
+import { PostComponent } from './blog/components/post/post.component'
 
 const routes:Routes = [
     { //DEFAULT
@@ -28,6 +29,10 @@ const routes:Routes = [
             {
                 path: 'blog',
                 loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule)
+            },
+            {
+              path: 'blog/:id',
+              component: PostComponent,
             },
             {
                 path: 'contact',

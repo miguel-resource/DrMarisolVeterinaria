@@ -23,9 +23,9 @@ export class DialogPostComponent implements OnInit {
   date: any;
   image: string = "";
   text: string = "";
+  introduccion: FormControl = new FormControl('', [Validators.required, Validators.minLength(150)])
 
   constructor(
-    private angularFireStorage: AngularFireStorage,
     private postBlogService: PostBlogService,
     private formBuilder: FormBuilder,
     private dialogRef:  MatDialogRef<DialogPostComponent>,
@@ -38,6 +38,7 @@ export class DialogPostComponent implements OnInit {
       tipo: ['', Validators.required],
       fecha: [''],
       caratula: ['', Validators.required],
+      introduccion : ['', Validators.required],
       contenido: ['', Validators.required],
     })
 
@@ -49,12 +50,14 @@ export class DialogPostComponent implements OnInit {
       this.text = this.data.contenido;
       this.idUpdateFirebase = this.data.idFirebase;
 
+      console.log(this.data.introduccion);
 
       this.formPost.patchValue({
         nombre: this.data.nombre,
         tipo: this.data.tipo,
         fecha: this.data.fecha,
         caratula: this.data.caratula,
+        introduccion: this.data.introduccion,
         contenido: this.data.contenido,
       })
     }else {

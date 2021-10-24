@@ -3,25 +3,32 @@
     <h3 class="title-principal">Blog</h3>
   </div>
   <div class="posts">
-    <div class="post-item">
-      <mat-card class="example-card">
-        <mat-card-header>
-          <mat-card-title>Shiba Inu</mat-card-title>
-          <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <p>
-            The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-            A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-            bred for hunting.
-          </p>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
-      </mat-card>
+
+    <div class="post-item" *ngFor="let item of posts">
+      <div class="post-cartula">
+        <img src="{{ item.caratula }}" alt="">
+      </div>
+
+      <div class="post-content">
+        <h3>
+          <a href="#">{{ item.nombre }}</a>
+         </h3>
+        <span class="date"><i class="fas fa-calendar-week"></i> {{ item.fecha*1000 | date: 'dd/MM/yyyy' }}</span>
+        <span class="new">Nuevo</span>
+        <div [ngSwitch]="item.tipo" class="type">
+          <span *ngSwitchCase="'Gatos'"><i class="fas fa-cat"></i>Gatos</span>
+          <span *ngSwitchCase="'Perros'"><i class="fas fa-dog"></i>Perros</span>
+          <span *ngSwitchCase="'Promociones'"><i class="fas fa-percentage"></i>Promociones</span>
+          <span *ngSwitchCase="'Tips'"><i class="fas fa-lightbulb"></i>Tips</span>
+          <span *ngSwitchCase="'Primeros auxilios'"><i class="fas fa-first-aid"></i>Primeros auxilios</span>
+          <span *ngSwitchCase="'Alimentos'"><i class="fas fa-cookie-bite"></i>Alimentos</span>
+        </div>
+
+        <div class="post-content-intro">
+          <p>{{ item.introduccion }} </p>
+        </div>
+      </div>
     </div>
+
   </div>
 </div>

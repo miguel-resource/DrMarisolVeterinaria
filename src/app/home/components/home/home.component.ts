@@ -31,8 +31,6 @@ export class HomeComponent implements OnInit {
   //CRUDS TO DATA BASE
   collaborators: Collaborator[] = [];
   cards: CardHome[] = [];
-
-
   sliders: Slider[] = [];
 
   constructor(

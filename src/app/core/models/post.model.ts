@@ -3,6 +3,7 @@ export interface Post {
   tipo: string;
   fecha: number;
   caratula: string;
+  introduccion: string;
   contenido: string;
   idFirebase: string;
 }

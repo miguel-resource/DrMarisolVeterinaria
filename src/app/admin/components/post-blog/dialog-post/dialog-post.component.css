@@ -12,6 +12,11 @@ form {
   width: 80%;
 }
 
+.mat-label span {
+  font-size:10px;
+  color: blue;
+}
+
 .mat-icon {
   color: #5a7ca8
 }
@@ -44,14 +49,14 @@ button {
  * Contenido del blog
  * */
 
-.content-item { 
+.content-item {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.content-item .content-input { 
+.content-item .content-input {
   font-size: 15px;
 }
 
-/* Características que todos los blogs van a tener */ 
+/* Características que todos los blogs van a tener */
 .content-item .content-output > h1 { font-size: 15px !important; }

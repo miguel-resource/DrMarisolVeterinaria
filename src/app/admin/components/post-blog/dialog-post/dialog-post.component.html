@@ -37,16 +37,15 @@
                   <mat-option value="Gatos">Gatos</mat-option>
                   <mat-option value="Perros">Perros</mat-option>
                 </mat-select>
-
             </mat-form-field>
           </div>
 
-
-
-          <button mat-raised-button *ngIf="(idUpdateFirebase.length > 0)"[disabled]="!formPost.valid">Actualizar</button>
-          <button [disabled]="!formPost.valid" mat-raised-button *ngIf="!(idUpdateFirebase.length > 0)" (click)="createPost()">Crear</button>
-
-
+          <div class="form-item">
+            <mat-form-field appearance="fill">
+              <mat-label>Descripción <span style="font-size:10px">Max: 150</span></mat-label>
+              <textarea matInput formControlName="introduccion"  maxlength="150" rows="5"></textarea>
+            </mat-form-field>
+          </div>
         </div>
       </form>
 
@@ -60,6 +59,9 @@
               <mat-label> Contenido del blog</mat-label>
               <textarea matInput formControlName="contenido"  [(ngModel)]="text" rows="23"></textarea>
             </mat-form-field>
+
+            <button mat-raised-button *ngIf="(idUpdateFirebase.length > 0)"[disabled]="!formPost.valid" (click)="updatePost()">Actualizar</button>
+            <button [disabled]="!formPost.valid" mat-raised-button *ngIf="!(idUpdateFirebase.length > 0)" (click)="createPost()">Crear</button>
           </form>
         </div>
 

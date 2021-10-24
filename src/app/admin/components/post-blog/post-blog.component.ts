@@ -33,6 +33,7 @@ export class PostBlogComponent implements OnInit {
           tipo: e.payload.doc.data().tipo,
           fecha: e.payload.doc.data().fecha,
           caratula: e.payload.doc.data().caratula,
+          introduccion: e.payload.doc.data().introduccion,
           contenido: e.payload.doc.data().contenido,
           idFirebase: e.payload.doc.id
         }
@@ -59,6 +60,7 @@ export class PostBlogComponent implements OnInit {
         tipo: item.tipo,
         fecha: this.date,
         caratula: item.caratula,
+        introduccion: item.introduccion,
         contenido: item.contenido,
         idFirebase: item.idFirebase,
       }
