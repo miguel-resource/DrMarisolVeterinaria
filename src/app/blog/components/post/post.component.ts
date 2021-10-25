@@ -11,6 +11,10 @@ import { Post } from './../../../core/models/post.model'
 export class PostComponent implements OnInit {
 
   nombre: string = "";
+  tipo: string = "";
+  fecha!: number;
+  caratula: string = "";
+  contenido : string = "";
 
   constructor(
     private route: ActivatedRoute,
@@ -20,7 +24,12 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       console.log(params.id);
-      this.postBlogService.getPost(params.id).subscribe(data => {
+      this.postBlogService.getPost(params.id).subscribe((data:any) => {
+        this.nombre = data.data().nombre;
+        this.tipo = data.data().tipo;
+        this.fecha = data.data().fecha;
+        this.caratula = data.data().caratula;
+        this.contenido = data.data().contenido;
       })
     })
   }

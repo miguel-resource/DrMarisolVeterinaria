@@ -1,1 +1,20 @@
-<p>post works!</p>
+<div class="post-item">
+    <div class="post-item-img">
+        <img src="{{ caratula }}" alt="{{ nombre }} ">
+    </div>
+
+    <div class="post-item-intro">
+        <h3>{{ nombre }}</h3>
+        <div class="intro-data">
+            <span class="date"><i class="fas fa-calendar-week"></i>{{ fecha*1000 | date: 'dd/mm/YYYY' }}</span>
+            <div class="intro-social">
+                <a href=""><i class="fab fa-facebook"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <span class="type">{{ tipo }}</span>
+        </div>
+    </div>
+<!--     <showdown [value]="contenido"></showdown>
+ -->
+</div>
