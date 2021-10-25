@@ -4,15 +4,13 @@
   </div>
   <div class="posts">
 
-    <div class="post-item" *ngFor="let item of posts">
+    <div class="post-item" matRipple routerLink="/blog/{{ item.idFirebase }}" *ngFor="let item of posts">
       <div class="post-cartula">
         <img src="{{ item.caratula }}" alt="">
       </div>
 
       <div class="post-content">
-        <h3>
-          <a href="#">{{ item.nombre }}</a>
-         </h3>
+        <h3>{{ item.nombre }}</h3>
         <span class="date"><i class="fas fa-calendar-week"></i> {{ item.fecha*1000 | date: 'dd/MM/yyyy' }}</span>
         <span class="new">Nuevo</span>
         <div [ngSwitch]="item.tipo" class="type">
