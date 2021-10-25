@@ -54,7 +54,7 @@ export class PostBlogComponent implements OnInit {
 
   update(item:any)  {
     let dialogRef = this.dialog.open(DialogPostComponent, {
-      width: '1700px',
+      width: '1900px',
       data: {
         nombre: item.nombre,
         tipo: item.tipo,

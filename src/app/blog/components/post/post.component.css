@@ -9,6 +9,7 @@
     height: 18em;
     object-fit: cover;
     margin: 0 auto;
+    box-shadow: 0px 0px 10px rgb(107, 107, 107);
 }
 
 .post-item .post-item-intro h3{ 
@@ -23,6 +24,19 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     width: 40%;
+    grid-gap: 10px;
+}
+
+.intro-data .date {
+    background-color: #171B47;
+    color: #fff;
+    text-align: center;
+    width: 85%;
+    border-radius:7px;
+}
+
+.intro-data .date  i { 
+    margin-right:  5px;
 }
 
 .intro-data .intro-social {
@@ -32,7 +46,12 @@
 }
 
 .intro-social a { 
-    font-size: 20px;
+    font-size: 25px;
+    transition: all 0.4s;
+}
+
+.intro-social a:hover { 
+    transform: scale(0.8);
 }
 
 .intro-social .fa-facebook { 
@@ -46,6 +65,33 @@
 .intro-social .fa-whatsapp { 
     color: rgb(39, 146, 39);
 }
+
+.intro-data .type { 
+    background-color: #545fd8;
+    width: 150px;
+    text-align: center;
+    border-radius:5px;
+}
+
+.intro-data .type span { 
+    color: #fff;
+}
+
+.intro-data .type span i{ 
+    margin-right: 5px;
+}
+
+/****
+    Edición del output del blog
+*****/
+
+.post-item-content {
+    padding: 20px;
+}
+
+
+
+
 
 
 

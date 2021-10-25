@@ -28,9 +28,11 @@ body {
 .content-output {
   height: 410px;
   overflow-y: scroll;
+  overflow-x: visible;
 }
 
-.content-item .content-output blockquote {
+.content-item .content-output blockquote,
+.post-item-content blockquote {
   background-color: rgb(235, 235, 235);
   padding-left:  10px;
   color: gray;
@@ -40,47 +42,58 @@ body {
   border-radius: 3px;
 }
 
-.content-item .content-output li{
+.content-item .content-output li,
+.post-item-content li{
   padding-left: 1em;
 }
 
-.content-item .content-output li:before{
+.content-item .content-output li:before,
+.post-item-content li:before{
   font-family: FontAwesome;
   content: "\f1b0";
   padding-right: 0.4em;
   color: #005397;
 }
 
-.content-item .content-output  h1 {
+.content-item .content-output  h1,
+.post-item-content h1{
   color: rgb(116, 116, 116);
-  font-size: 32px !important;
-  font-weight: 500;
-  margin-bottom: 20px;
+  font-size: 45px !important;
+  font-weight: 600 !important;
+  margin-bottom: 20px !important;
   margin-top: 0px;
   line-height: 4rem;
   border-bottom: 1px solid rgb(173, 173, 173);
+  line-height:1em !important;
+  padding-bottom: 10px;
 }
 
-.content-item .content-output h2 {
+.content-item .content-output h2,
+.post-item-content h2{
+  font-size: 36px!important;
+  margin-top: 0px!important;
+  margin-bottom: 0 !important;
+  font-weight: 500 !important;
+  line-height:1em !important;
+}
+
+.content-item .content-output h3,
+.post-item-content h3{
   font-size: 25px !important;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-weight: 450;
+  font-weight: 600 !important;
+  margin-top: 20px !important;
+  line-height:1em !important;
 }
 
-.content-item .content-output h3 {
-  font-size: 20px;
-  font-weight: 400;
-  margin-top: 0px;
-}
-
-.content-item .content-output h4 {
+.content-item .content-output h4,
+.post-item-content h4 {
   font-size: 17px;
   font-weight: 400;
   margin-top: 0px;
 }
 
-.content-output p {
+.content-output p,
+.post-item-content p {
   margin: 0px !important;
 }
 

@@ -8,13 +8,23 @@
         <div class="intro-data">
             <span class="date"><i class="fas fa-calendar-week"></i>{{ fecha*1000 | date: 'dd/mm/YYYY' }}</span>
             <div class="intro-social">
-                <a href=""><i class="fab fa-facebook"></i></a>
-                <a href=""><i class="fab fa-instagram"></i></a>
-                <a href=""><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/MvzMCC" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/dra_marisol_veterinaria/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <span class="type">{{ tipo }}</span>
+            <div [ngSwitch]="tipo" class="type">
+                <span *ngSwitchCase="'Gatos'"><i class="fas fa-cat"></i>Gatos</span>
+                <span *ngSwitchCase="'Perros'"><i class="fas fa-dog"></i>Perros</span>
+                <span *ngSwitchCase="'Promociones'"><i class="fas fa-percentage"></i>Promociones</span>
+                <span *ngSwitchCase="'Tips'"><i class="fas fa-lightbulb"></i>Tips</span>
+                <span *ngSwitchCase="'Primeros auxilios'"><i class="fas fa-first-aid"></i>Primeros auxilios</span>
+                <span *ngSwitchCase="'Alimentos'"><i class="fas fa-cookie-bite"></i>Alimentos</span>
+              </div>
         </div>
     </div>
-<!--     <showdown [value]="contenido"></showdown>
- -->
+
+    <div class="post-item-content">
+        <showdown class="post-content"[value]="contenido"></showdown>
+    </div>
+
 </div>
