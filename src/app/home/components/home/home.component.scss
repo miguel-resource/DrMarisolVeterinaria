@@ -391,7 +391,7 @@ cowork .card button:hover{
 
 }
 @media (min-width:480px) { 
-    /***
+  /***
     Slider
   **/
   .swiper {
@@ -405,7 +405,7 @@ cowork .card button:hover{
 
   #home-slider .title { 
     font-size:45px;
-    margin-bottom: 1%;
+    margin-bottom: 3%;
     margin-top: 5%;
   }
 
@@ -456,7 +456,7 @@ cowork .card button:hover{
 }
 
 @media (min-width:600px) {
-    /***
+  /***
     Slider
   **/
   .swiper {
@@ -481,7 +481,7 @@ cowork .card button:hover{
   }
 
   #cards-intro .card .mat-card-content p{ 
-    font-size: 13px;
+    font-size: 14px;
   }
   /***
     Introduccion
@@ -501,7 +501,7 @@ cowork .card button:hover{
   **/
 
   .collaborators-responsive .card {
-    width: 56% !important;
+    width: 60% !important;
   }
 
 }
