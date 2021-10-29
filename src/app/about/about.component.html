@@ -21,7 +21,7 @@
       <!--SLIDER DE LOS PRINCIPALES SERVICIOS-->
       <swiper [slidesPerView]="2" [spaceBetween]="30" [navigation]="true" [pagination]="{ clickable: true }">
 
-        <ng-template swiperSlide *ngFor="let service of services">
+        <ng-template swiperSlide *ngFor="let service of servicesCards">
           <mat-card class="card">
             <mat-card-header>
               <div class="mat-car-ido" mat-card-avatar><i class="fas fa-{{ service.icon }}"></i></div>
@@ -39,7 +39,7 @@
     <div id="service-vendors">
       <h3 class="title-principal">Principales proveedores</h3>
       <div id="cards-vendors">
-        <div class="card-vendor" *ngFor="let vendor of vendors">
+        <div class="card-vendor" *ngFor="let vendor of providers">
           <img src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/{{vendor.url}}" alt="{{vendor.title}}">
         </div>
       </div>

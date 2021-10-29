@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { AboutComponent } from './components/about.component';
+import { AboutComponent } from './about.component';
 
 import { AboutRoutingModule } from './about-routing.module';
 import { MaterialModule } from '../material/material.module';

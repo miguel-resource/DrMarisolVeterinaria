@@ -9,6 +9,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { SharedModule } from './../shared/shared.module';
 import { SwiperModule } from 'swiper/angular';
 
+
 //Firebase
 import { AngularFireModule } from '@angular/fire';
 import { environment } from './../../environments/environment.prod';

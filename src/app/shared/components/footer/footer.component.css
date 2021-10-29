@@ -1,119 +1,56 @@
-*{
-    background-color: #242526;
-    list-style: none;
+.global-footer{
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+    color: gray;
 }
 
-/*
-Estilo global para el footer
-*/
-
-#global-footer{
-    margin-left: 14.5%;
-    width: 85%;
-    padding: 20px;
-    background: #ccc;
-    box-shadow: 0 0 20px #ccc;
-}
-
-#content-footer{
-    padding: 15px;
+.footer-content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 18px;
-    color: #fff;
-    border-radius: 20px;
-    line-height: 15px;
+    list-style: none;
+    width: 95%;
+    margin: 0 auto;
 }
 
-/*
-Estilo para la sección servicos del footer
-*/
-
-#content-footer #servicios {
-    border-right: 1px solid #fff;
-    width: 100%;
+.footer-mention {
+    margin-top: 7%;
 }
 
-#servicios h3{
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 0px;
-    font-size:30px;
-}
-
-#servicios ul {
-    margin-top: 10px;
-}
-
-#servicios ul li{
-    font-size: 13px;
-    font-family: 'Montserrat', sans-serif;
-
-}
-
-#list-contact {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-gap: 1px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-#list-contact li a{
-    font-size: 24px;
-    cursor: pointer;
-    text-decoration: none;
-    color: #fff;
-}
-
-#list-contact li a:hover i{
-    transition: all 350ms;
-    transform: scale(1.2);
-}
-
-#list-contact .facebook a:hover i{
-    color:#2D88FF;
-}
-
-#list-contact .whatsapp a:hover i{
-    color: #0DC143;
-}
-
-#servicios span{
-    font-size: 10px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-/*
-Estilo para la sección Ubicación del footer
-*/
-
-#ubication h3{
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 0px;
-    font-size:30px;
-
-}
-
-#ubication span{
+.footer-mention span { 
     display: block;
-    margin-top: 10px;
-    margin-bottom: 7px;
 }
 
-#ubication span a{
+.footer-mention span a{ 
+    color: gray;
     text-decoration: none;
-    color: rgb(255, 185, 185);
-    font-family: 'Montserrat', sans-serif;
 }
 
-#ubication span a:hover{
-    color: #4DABF7;
+.footer-mention span a:hover{ 
+    text-decoration: underline;
 }
 
-#ubication p{
-    font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
+.footer-logo img {
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+}
+
+.footer-nav  {
+    margin-top: 10%;
+}
+
+.footer-nav ul li { 
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav ul li a{ 
+    color: gray;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+.footer-nav ul li a:hover { 
+    text-decoration: underline;
 }
 

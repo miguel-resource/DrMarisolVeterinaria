@@ -7,7 +7,8 @@ import { CollaboratorsService } from './service/collaborators/collaborators.serv
 import { CardhomeService } from './service/cardhome/cardhome.service';
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
   ],

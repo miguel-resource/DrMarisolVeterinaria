@@ -6,12 +6,6 @@
   width: 100%;
 }
 
-.swiper{
-  width: 1100px;
-  height: 430px;
-  margin: 0 auto;
-}
-
 
 #home-slider{
   width: 100%;
@@ -20,10 +14,15 @@
   border-radius:10%;
 }
 
+.swiper{
+  width: 65em;
+  height: 430px;
+  margin: 0 auto;
+}
+
 #home-slider .back {
   background-repeat: no-repeat;
-  background-size: 100% 100%;
-  border: 10px solid  #171b47;
+  background-size:100% 120%;
   box-shadow: 0px 2px 7px rgb(104, 104, 104);
   width: 100%;
   height: 430px;
@@ -43,12 +42,12 @@
 #home-slider .title{
   text-align: center;
   margin-top: 12%;
-  padding-top: 6%;
+  margin-bottom: 5%;
+  padding-top: 5%;
   font-weight: bold;
-  font-size: 60px;
-  font-family: 'Roboto Mono', monospace;
-  color: #171b47;
-  -webkit-text-stroke: 1.2px #fff;
+  font-size: 80px;
+  font-family:'Dancing Script', cursive;
+  color: #fff;
 }
 
 #home-slider .content{
@@ -67,7 +66,6 @@
   background-color: #5C98FB;
   color: #fff;
 }
-
 
 
 
@@ -205,24 +203,24 @@ mat-card-content span {
 
 
 #cowork .swiper {
-  height: 500px;
+  height: 450px;
   padding: 10px;
   width: 90%;
 }
 
 #cowork .card {
   box-shadow: 2px 2px 10px gray;
-  width: 90%;
-  height: 485px;
+  width: 75%;
+  height: 400px;
 }
 
 #cowork .card .mat-card-title {
-  font-size: 19px !important;
+  font-size: 16px !important;
 }
 
 #cowork .card img {
   border-radius: 5%;
-  height: 330px;
+  height: 250px;
   width: 92%;
   margin-left: 4%;
 }
@@ -249,9 +247,480 @@ cowork .card button:hover{
 }
 
 
+/***
+  Media Queries mobile first
+***/
 
 
 
+
+@media (min-width:320px) {
+  /***
+    Slider
+  **/
+  #home-slider {
+    width: 100%;
+    margin-top: 2% ;
+  }
+  .swiper {
+    width: 20em !important;
+    height: 250px;
+  }
+
+  #home-slider .back {
+    height: 215px;
+  }
+
+  #home-slider .content-slider { 
+    width: 90%;
+    height: 70%;
+  }
+
+  #home-slider .title { 
+    font-size:45px;
+  }
+
+  #home-slider .content { 
+    font-size:11px;
+    width: 90%;
+    font-weight: 600;
+    line-height: 16px;
+  }
+
+  #home-slider button { 
+    left: 35%;
+    margin-top: 0;
+    width: 33%;
+    font-size: 12px;
+    height:28px;
+    line-height: 28px;
+  }
+
+  /***
+  Navegación entre partes de la página
+  **/
+  #cards-intro{
+    grid-template-columns: 1fr;
+  }
+
+  #cards-intro .card { 
+    width: 92%;
+    margin: 0 auto;
+  }
+
+  #cards-intro .card .mat-card-title{ 
+    font-size: 18px;
+  }
+
+  #cards-intro .card .mat-card-content { 
+    margin-bottom: 9px;
+  }
+
+  #cards-intro .card .mat-card-content p{ 
+    font-size: 12px;
+  }
+
+  #cards-intro .card button  {
+    margin-left: 36% !important;
+    font-size:15px;
+    height: 31px;
+    line-height: 20px;
+  }
+
+  /***
+    Introduccion
+  **/
+
+  .title {
+    font-size:  30px;
+    height: 46px;
+    line-height: 34px;
+  }
+
+  .tab-introduction {
+    grid-template-columns:1fr;
+  }
+
+  .tab-introduction p { 
+    font-size: 16px;
+    line-height:33px;
+    padding-left: 0;
+    text-align: center;
+    margin-top: 0px ;
+  }
+
+  .tab-introduction img {
+    margin: 0 auto;
+    width: 75%;
+  }
+
+  /***
+    Ubicación
+  **/
+
+  .tab-content iframe { 
+    border-radius: 20px;
+    height: 250px;
+  }
+
+  /***
+    Colaboradores
+  **/
+  #cowork .swiper { 
+    display: none;
+  }
+
+  .collaborators-responsive  {
+    width: 100%;
+  }
+
+  .collaborators-responsive .card {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    width: 90% !important;
+    height: auto !important;
+  }
+
+  .collaborators-responsive .card .mat-card-avatar { 
+    width: 30px !important;
+    height: 30px;
+  }
+
+  
+
+
+}
+@media (min-width:480px) { 
+    /***
+    Slider
+  **/
+  .swiper {
+    width: 30em !important;
+    height: 290px;
+  }
+
+  #home-slider .back { 
+    height: 240px;
+  }
+
+  #home-slider .title { 
+    font-size:45px;
+    margin-bottom: 1%;
+    margin-top: 5%;
+  }
+
+  #home-slider .content-slider { 
+    width: 95%;
+    height: auto;
+  }
+  #home-slider .content { 
+    font-size:12px;
+  }
+
+  #home-slider button { 
+    left: 41%;
+    width: 19%;
+    font-size:11px;
+    height: 26px;
+    line-height: 26px;
+  }
+  /***
+  Navegación entre partes de la página
+  **/
+
+  #cards-intro .card { 
+    width: 69%;
+    margin: 0 auto;
+  }
+
+  #cards-intro .card .mat-card-title{ 
+    font-size: 20px;
+  }
+
+  /***
+    Introduccion
+  **/
+  .title  {
+    font-size:33px;
+    height: 50px;
+    line-height: 37px;
+  }
+
+  /***
+    Colaboradores
+  **/
+
+  .collaborators-responsive .card {
+    width: 75% !important;
+  }
+}
+
+@media (min-width:600px) {
+    /***
+    Slider
+  **/
+  .swiper {
+    width: 37em !important;
+    height: 300px;
+  }
+
+  #home-slider .back { 
+    height: 240px;
+  }
+  /***
+  Navegación entre partes de la página
+  **/
+
+  #cards-intro .card { 
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  #cards-intro .mat-card { 
+    padding-bottom: 37px;
+  }
+
+  #cards-intro .card .mat-card-content p{ 
+    font-size: 13px;
+  }
+  /***
+    Introduccion
+  **/
+  .tab-introduction p{ 
+    font-size: 18px;
+    line-height:  42px;
+    padding-right: 0px;
+  }
+
+  .tab-introduction img { 
+    width: 50%;
+  }
+
+  /***
+    Colaboradores
+  **/
+
+  .collaborators-responsive .card {
+    width: 56% !important;
+  }
+
+}
+@media (min-width:801px) {
+    /***
+    Slider
+  **/
+  .swiper { 
+    width: 48em !important;
+    height: 350px
+  }
+
+  #home-slider .back { 
+    height: 300px;
+  }
+
+  #home-slider .title { 
+    font-size:50px;
+    margin-top: 6%;
+    margin-bottom: 30px;
+  }
+
+  #home-slider .content { 
+    font-size: 15px;
+  }
+
+  #home-slider button { 
+    left: 41%;
+    margin-top: 0;
+    width: 16%;
+    font-size: 12px !important;
+    height:28px;
+    line-height: 28px;
+  }
+  /***
+  Navegación entre partes de la página
+  **/
+
+  #cards-intro .card { 
+    width: 52%;
+    margin: 0 auto;
+  }
+
+  #cards-intro .card .mat-card-content p{ 
+    font-size: 14px;
+  }
+
+  /***
+    Ubicación
+  **/
+
+  .tab-content iframe { 
+    height: 300px;
+  }
+
+  /***
+    Colaboradores
+  **/
+
+  .collaborators-responsive { 
+    display: none;
+  }
+
+  #cowork .swiper { 
+    display: block;
+    width: 100% !important;
+  }
+
+  #cowork .card { 
+    width: 96%;
+  }
+
+
+}
+@media (min-width:1025px) { 
+    /***
+    Slider
+  **/
+  .swiper { 
+    width: 52em !important;
+    height: 380px
+  }
+
+  #home-slider .back { 
+    height: 330px;
+  }
+
+  #home-slider .title { 
+    font-size:55px;
+    margin-top: 6%;
+    margin-bottom: 50px;
+  }
+  
+
+  #home-slider button { 
+    left: 43%;
+    width: 14%;
+    font-size: 14px !important;
+  }
+  /***
+  Navegación entre partes de la página
+  **/
+  #cards-intro { 
+    grid-template-columns: repeat(3, 1fr);
+    margin-left: 20px;
+  }
+
+  #cards-intro .card {
+    width: 115%;
+  }
+  
+
+  #cards-intro .card .mat-card {
+    padding-bottom: 30px;
+  }
+
+
+  #cards-intro .card .mat-card-content p{ 
+    font-size: 13px;
+  }
+  /***
+    Introduccion
+  **/
+
+  .tab-introduction { 
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tab-introduction img { 
+    width: 80%;
+  }
+
+  .tab-introduction p { 
+    font-size: 17px;
+    line-height: 38px;
+    padding-right: 17px;
+    margin-top: 0%;
+    text-align: left;
+  }
+
+  /***
+    Colaboradores
+  **/
+
+  #cowork .card { 
+    width: 90%;
+  }
+
+  #cowork .card .mat-card-title {
+    font-size: 15px !important;
+  }
+
+}
+
+
+@media (min-width: 1175px) {
+  /***
+    Colaboradores
+  **/
+  #cowork .card { 
+    width: 75%;
+  }
+}
+
+@media (min-width:1280px) {
+    /***
+    Slider
+  **/
+  .swiper { 
+    width:  68em !important;
+    height: 445px
+  }
+
+  #home-slider .back { 
+    height: 390px;
+  }
+
+  #home-slider .content { 
+    font-size: 17px;
+  }
+
+  #home-slider button {
+    left: 44%;
+    width: 11%;
+    font-size: 16px !important;
+    line-height: 28px;
+    height: 28px; 
+    margin-top: 10px;
+  }
+
+  /***
+  Navegación entre partes de la página
+  **/
+  #cards-intro .card {
+    height: 225px;
+  }
+
+
+  #cards-intro .card .mat-card-content p{ 
+    font-size: 16px;
+  }
+
+  /***
+    Navegación entre partes de la página
+  **/
+  .tab-introduction p { 
+    font-size: 19px;
+    line-height: 41px;
+    margin-top: 4%;
+  }
+
+  /***
+    Colaboradores
+  **/
+  #cowork .card { 
+    width: 65%;
+  }
+
+}
 
 
 

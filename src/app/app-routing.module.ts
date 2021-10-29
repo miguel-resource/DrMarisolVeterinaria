@@ -22,8 +22,6 @@ const routes:Routes = [
             },
             {
                 path: 'home',
-                canActivate: [ AdminGuard ],
-                //component: HomeComponent,
                 loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
             },
             {
@@ -46,7 +44,12 @@ const routes:Routes = [
     },
     {
         path: 'admin',
+        canActivate: [ AdminGuard ], 
         loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+    },
+    {
+        path: 'auth',
+        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
     },
     { //NOT FOUND
         path: '**',

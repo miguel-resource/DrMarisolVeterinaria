@@ -7,11 +7,23 @@ import { AngularFireAuth } from '@angular/fire/auth';
 export class AuthService {
 
   constructor(
-    private af: AngularFireAuth,    
+    private angularFireAuth: AngularFireAuth,    
 
   ) { }
 
   createUser(email:string, password:string){
-    return this.af.createUserWithEmailAndPassword(email, password);
+    return this.angularFireAuth.createUserWithEmailAndPassword(email, password);
+  }
+
+  loguinUser(email:string, password:string) { 
+    return this.angularFireAuth.signInWithEmailAndPassword(email, password);
+  }
+
+  logOut() { 
+    return this.angularFireAuth.signOut();
+  }
+
+  isLogin() { 
+    return this.angularFireAuth.authState;
   }
 }

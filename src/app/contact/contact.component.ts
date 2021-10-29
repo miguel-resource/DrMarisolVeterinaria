@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { FormContactService } from './../../../core/service/form-contact/form-contact.service'
+import { FormContactService } from './../core/service/form-contact/form-contact.service'
 @Component({
   selector: 'app-contact',
   templateUrl: '../contact/contact.component.html',
@@ -17,7 +17,7 @@ export class ContactComponent implements OnInit {
   submit: boolean = false;
   isLoading: boolean = false;
   responseMessage: string = ""; // the response message to show to the user
-
+  
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
@@ -34,6 +34,7 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
 

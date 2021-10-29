@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from './../../../core/service/posts/posts.service'
-import SwiperCore, { Pagination, Navigation, A11y} from "swiper";
+import SwiperCore, { Autoplay, Pagination, Navigation, A11y} from "swiper";
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from './../dialog/dialog.component'
 
@@ -15,7 +15,7 @@ import { Slider } from './../../../core/models/slider.model'
 import { CardHome } from './../../../core/models/cardhome.model'
 
 SwiperCore.use([
-  Navigation,
+  Autoplay,
   Pagination,
   A11y
 ])
@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
   collaborators: Collaborator[] = [];
   cards: CardHome[] = [];
   sliders: Slider[] = [];
+  window!: Window;
 
   constructor(
    private postsService: PostsService,
@@ -42,8 +43,19 @@ export class HomeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.fetchAllInfo();
-    this.fetchInfo('2');
+
+    //Firebase get Slider
+    this.sliderService.getAllSliders().subscribe(resp =>{
+      this.sliders = resp.map((e:any) => {
+        return {
+            titulo: e.payload.doc.data().titulo,
+            contenido: e.payload.doc.data().contenido,
+            background: e.payload.doc.data().background,
+            url: e.payload.doc.data().url,
+            idFirebase: e.payload.doc.id
+        }
+      })
+    });
     //Firebase get Colaborators
     this.collaboratorsService.getAllCollaborators().subscribe(resp => {
       this.collaborators = resp.map((e:any) => {
@@ -74,23 +86,9 @@ export class HomeComponent implements OnInit {
     }, err => {
       console.error(err);
     });
+    this.window.scrollTo(-10,0);
 
-    //Firebase get Slider
-    this.sliderService.getAllSliders().subscribe(resp =>{
-      this.sliders = resp.map((e:any) => {
-        return {
-            titulo: e.payload.doc.data().titulo,
-            contenido: e.payload.doc.data().contenido,
-            background: e.payload.doc.data().background,
-            url: e.payload.doc.data().url,
-            idFirebase: e.payload.doc.id
-        }
-      })
-    })
-
-    console.log("Colaboradores" + this.collaborators);
   }
-
 
   openDialog(item:any):void {
     let dialogRef = this.dialog.open(DialogComponent, {
@@ -106,52 +104,18 @@ export class HomeComponent implements OnInit {
   }
 
   fetchAllInfo(){
-    this.postsService.getAllInfo()
-      .subscribe(posts => {
-        console.log(posts);
-      });
+    
   }
 
   fetchInfo(id:string){
-    this.postsService.getInfo(id)
-      .subscribe(post => {
-        console.log(post);
-      })
   }
 
   postInfo(){
-    const newInfo = {
-      id: '22',
-      title: 'Hii',
-      image: 'xd',
-      price: 200,
-      description: 'blaa bla bla'
-    };
-    this.postsService.postInfo(newInfo)
-    .subscribe(post =>{
-      console.log(post);
-    })
+    
   }
 
   updateInfo(){
-    const newInfo = {
-      id: '27',
-      title: 'Hola acabas de ser editado',
-      image: 'porque la verdad si me da hueva',
-      price: 200,
-      description: 'blaa bla bla'
-    };
-    this.postsService.putInfo('2',newInfo)
-    .subscribe(post =>{
-      console.log(post);
-    })
-  }
-
-  deleteInfo(){
-    this.postsService.deleteInfo('2')
-    .subscribe(post =>{
-      console.log(post);
-    })
+   
   }
 
 }

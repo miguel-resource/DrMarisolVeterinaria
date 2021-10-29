@@ -1,0 +1,58 @@
+.content-login { 
+    background-color: rgb(236, 232, 232);
+    height: 100%;
+    padding-top: 10%;
+}
+
+.content-login .form { 
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px #ccc;
+    border-radius: 10px;
+    height: auto;
+    padding: 20px;
+    margin: 0 auto;
+    width:  30%;
+}
+
+.content-login .form .form-logo { 
+    width: 40%;
+    margin: 0 auto;
+}
+
+.content-login .form form {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.form form .mat-form-field{ 
+    margin-bottom: 10px;
+}
+
+.form form .btn { 
+    background: #0994DC;
+    color: #fff;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.form form .btn-login { 
+    margin: 0 auto;
+    width: 60%;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: #0994DC !important;
+}
+  
+::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: #0994DC !important;
+} 
+
+::ng-deep.mat-form-field-ripple {
+/*change color of underline when focused*/
+    background-color: #0994DC !important;;
+}
