@@ -3,22 +3,12 @@
     <div id="inicio-contacto">
       <div id="inicio-text">
         <div>
-          <h2 class="title-principal">Contacto</h2>
+          <h2 class="title-principal title">Contacto</h2>
           <p class="text-principal">
-            Para citas o para poder enviarnos alguna duda sobre alguno de nuestros productos o servicios
-            escríbenos en nuestras redes sociales o envíanos un correo en
-            el formulario que se encuentra abajo.
+            Para <span>citas</span> o para poder enviarnos alguna duda sobre alguno de nuestros productos o servicios
+            escríbenos en nuestras redes sociales o envíanos un <span>mensaje</span> en
+            el formulario que se encuentra <span>abajo</span>.
           </p>
-          <div id="social-buttons">
-            <ul>
-              <li class="social-insta"><a href="https://www.instagram.com/dra_marisol_veterinaria/" target="_blank"><i
-                    class="fab fa-instagram"></i></a></li>
-              <li class="social-face"><a href="https://www.facebook.com/MvzMCC" target="_blank"><i
-                    class="fab fa-facebook-f"></i></a></li>
-              <li class="social-what"><a href="https://wa.me/529514168818" target="_blank"><i
-                    class="fab fa-whatsapp"></i></a></li>
-            </ul>
-          </div>
         </div>
         <div>
           <div id="img-contacto">
@@ -26,40 +16,16 @@
           </div>
         </div>
       </div>
+      <div class="social-buttons">
+        <a class="button-instagram" href="https://www.instagram.com/dra_marisol_veterinaria/" target="_blank"><i
+            class="fab fa-instagram"></i></a>
+        <a class="button-facebook" href="https://www.facebook.com/MvzMCC" target="_blank"><i
+            class="fab fa-facebook-f"></i></a>
+        <a class="button-whatsapp" href="https://wa.me/529514168818" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+
 
       <div id="form-contact">
-        <div id="form-send">
-          <h3>Formulario</h3>
-            <mat-form-field appearance="fill">
-              <mat-label>Nombre</mat-label>
-              <input name="name" matInput [formControl]="nameField" required>
-              <mat-error *ngIf="nameField.invalid">{{getNameErrorMessage()}}</mat-error>
-            </mat-form-field>
-            <mat-form-field  appearance="fill">
-              <mat-label >Interes</mat-label>
-              <mat-select [formControl]="selectField" required>
-                <mat-option value="cotizacion">Cotización</mat-option>
-                <mat-option value="sugerencias">Sugerencias</mat-option>
-              </mat-select>
-              <mat-error *ngIf="selectField.invalid">{{getSelectMessage()}}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>Correo electrónico</mat-label>
-              <input name="email" [formControl]="emailField" matInput placeholder="kitty@example.com" required>
-              <mat-error *ngIf="emailField.invalid">{{getEmailErrorMessage()}}</mat-error>
-            </mat-form-field>
-            <mat-form-field appearance="fill">
-              <mat-label>Mensaje <span style="font-size: 10px;">(Max:150)</span></mat-label>
-              <textarea name="message" matInput [formControl]="textAreaField" required></textarea>
-              <mat-error *ngIf="textAreaField.invalid">{{getTextsErrorMessage()}}</mat-error>
-            </mat-form-field>
-
-            <button mat-fab [disabled]="!formContact.valid" (click)="createMessage()"
-              color="primary">
-              <mat-icon>send</mat-icon>
-            </button>
-        </div>
-
         <div id="text-contact">
           <div id="title-contact">
             <h3>¿Necesitas una cotización o una cita?</h3>
@@ -67,20 +33,49 @@
           <div id="sub-contact">
             <p>
               Únicamente damos consulta de manera presencial pero puedes enviarnos un correo y preguntar
-              por algún servicio o producto, estamos para servirte
+              por algún servicio o producto, estamos para servirte.
             </p>
-
             <ul>
-              <li><i class="fas fa-home"></i><span>Libres 801, Jalatlaco, Oaxaca de Juárez México.</span></li>
-              <li><i class="fas fa-mobile-alt"></i><span> 951 416 88 18</span></li>
-              <li><i class="fas fa-envelope"></i><span>marisol@gmail.com</span></li>
+              <li class="ubication">Libres 801, Jalatlaco, Oaxaca de Juárez México.</li>
+              <li class="number">951 416 88 18</li>
+              <li class="email">marisol@gmail.com</li>
             </ul>
           </div>
         </div>
+        <div id="form-send">
+          <h3>Formulario</h3>
+          <mat-form-field appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input name="name" matInput [formControl]="nameField" required>
+            <mat-error *ngIf="nameField.invalid">{{getNameErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Interes</mat-label>
+            <mat-select [formControl]="selectField" required>
+              <mat-option value="cotizacion">Cotización</mat-option>
+              <mat-option value="sugerencias">Sugerencias</mat-option>
+            </mat-select>
+            <mat-error *ngIf="selectField.invalid">{{getSelectMessage()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Correo electrónico</mat-label>
+            <input name="email" [formControl]="emailField" matInput placeholder="kitty@example.com" required>
+            <mat-error *ngIf="emailField.invalid">{{getEmailErrorMessage()}}</mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Mensaje <span style="font-size: 10px;">(Max:150)</span></mat-label>
+            <textarea name="message" matInput [formControl]="textAreaField" required></textarea>
+            <mat-error *ngIf="textAreaField.invalid">{{getTextsErrorMessage()}}</mat-error>
+          </mat-form-field>
 
+          <button mat-fab [disabled]="!formContact.valid" (click)="createMessage()" color="primary">
+            <mat-icon>send</mat-icon>
+          </button>
+        </div>
 
-
+   
       </div>
+
     </div>
   </div>
 </div>

@@ -9,9 +9,6 @@
   margin-left: 0%;
 }
 
-#inicio-contacto{
-  box-shadow: 0px 2px 7px #ccc;
-}
 
 #inicio-text {
   display: grid;
@@ -200,4 +197,251 @@ textarea{
 
 #sub-contact ul li span{
     margin-left: 1%;
+}
+
+
+@media (min-width:320px) {
+  .title {
+    font-size:  30px;
+    height: 46px;
+    line-height: 34px;
+  }
+
+  #inicio-text { 
+    grid-template-columns: 1fr;
+  }
+
+  #inicio-text h2 { 
+    margin-left: 0px;
+  }
+
+  #inicio-text .text-principal { 
+    padding-left: 0px !important;
+    text-align: center;
+    font-size: 13px;
+    padding: 5px !important;  
+  }
+
+  #inicio-text .text-principal span { 
+    color: #2D88FE;
+    font-weight: bold;
+  }
+
+  #inicio-text div { 
+    margin-left: 0% ;
+  }
+
+  #img-contacto { 
+    display: none;
+  }
+
+  .social-buttons { 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 0 auto;
+    margin-top: 10px;
+    width:  70%;
+  }
+
+  .social-buttons a { 
+    display: block;
+    color: gray;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 19px;
+    margin: 0 auto;
+    width: 100%;
+    box-shadow: 2px 2px 5px #ccc;
+  }
+
+  .social-buttons a:hover { 
+    box-shadow: inset 2px 1px 5px #ccc;
+  }
+
+  .social-buttons .button-facebook:hover { 
+    color: rgb(7, 7, 204)
+  }
+
+  .social-buttons .button-whatsapp:hover { 
+    color: rgb(8, 117, 8)
+  }
+
+  .social-buttons .button-instagram:hover { 
+    color: rgb(207, 44, 172)
+  }
+
+
+  /**************
+    Formulario
+  ***************/
+
+  #form-contact { 
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+
+  #form-contact h3 {
+    font-size: 27px;
+    margin-top: 0px;
+    text-align: center;
+  }
+
+  #sub-contact p {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 13px;
+  }
+
+  #sub-contact ul li {
+    font-size:13px
+  }
+
+  #sub-contact ul li:before {
+    font-family: FontAwesome;
+    padding-right: 0.4em;
+    float: left;
+  }
+
+  #sub-contact ul .ubication:before {
+    content: "\f015"
+  }
+
+  #sub-contact ul .number:before {
+    content: "\f095"
+  }
+
+  #sub-contact ul .email:before {
+    content: "\f0e0"
+  }
+}
+@media (min-width:480px) { 
+  .title  {
+    font-size:33px;
+    height: 50px;
+    line-height: 37px;
+  }
+  .social-buttons a { 
+    font-size: 24px;
+    width: 80%;
+    height: auto;
+    padding: 3px;
+  }
+
+
+  /**************
+    Formulario
+  ***************/
+}
+
+@media (min-width:600px) { 
+  #inicio-text .text-principal { 
+    font-size: 14px;
+  }
+
+  /**************
+    Formulario
+  ***************/
+  #sub-contact p {
+    font-size: 14.5px;
+    width: 86%;
+    margin: 0 auto;
+  }
+
+  #sub-contact ul {
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 17px;
+  }
+}
+@media (min-width:801px) {
+  .title { 
+    font-size:46px;
+    height: 61px;
+    line-height: 45px;
+  }
+
+  .text-principal { 
+    width: 80%;
+  }
+
+  /**************
+    Formulario
+  ***************/
+  #form-contact h3 {
+    font-size: 37px;
+  }
+
+  #sub-contact p {
+    font-size: 17px;
+  }
+
+  #sub-contact ul li {
+    font-size: 15px;
+  }
+}
+@media (min-width:1025px) { 
+  #inicio-text .text-principal { 
+    font-size: 16px;
+  }
+
+  .social-buttons a { 
+    font-size: 27px;
+    width: 50%;
+  }
+
+  /**************
+    Formulario
+  ***************/
+}
+@media (min-width:1280px) { 
+  #inicio-text {
+    grid-template-columns: repeat(2,1fr);
+    height: 250px;
+  }
+
+  #img-contacto {
+    display: block;
+  }
+
+  #img-contacto img { 
+    padding-top: 6%;
+    width:  34%;
+  }
+
+  .social-buttons {
+    width: 55%;
+  }
+
+  .social-buttons a {
+    font-size: 35px;
+    width: 45%;
+  }
+
+  /**************
+    Formulario
+  ***************/
+
+  #form-contact { 
+    grid-template-columns: 45% 55%;
+  }
+
+  #form-contact h3 {
+    margin-top: 20px;
+  }
+
+  #sub-contact p {
+    width: 90%;
+    margin-top: 10px;
+  }
+
+  #sub-contact ul {
+    width: 88%;
+    margin-top: 45px;
+  }
+
+  #sub-contact ul li {
+    font-size:  17px;
+  }
 }

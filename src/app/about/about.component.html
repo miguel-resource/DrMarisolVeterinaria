@@ -1,24 +1,25 @@
 <div id="global-about">
-  <div id="header">
 
-  </div>
   <div id="content-about">
+
     <div id="inicio-about">
+
       <div id="text-about">
-        <h2 class="title-principal">Nosotros</h2>
+        <div>
+          <img src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/about%2Fpexels-lumn-406014_adobespark.png?alt=media&token=3afdcd62-338b-4c21-b20e-5ad31a44f5c0" alt="veterinariaImg">
+          <h2 class="title-principal title">Nosotros</h2>
+        </div>
+        
+
         <p>
           Empresa 100% <span>oaxaqueña,</span> promovemos la salud y el binestar de tus mascotas,
           la adopción, la esterilización y el comercio local.
         </p>
       </div>
-      <div id="img-about">
-        <img src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/about-img.png?alt=media&token=ef9c30cb-a193-49e5-8469-a22e0baf63c8"  alt="veterinariaImg">
-      </div>
+      
     </div>
 
     <div id="service-about">
-      <h3 class="title-principal">Servicios</h3>
-      <!--SLIDER DE LOS PRINCIPALES SERVICIOS-->
       <swiper [slidesPerView]="2" [spaceBetween]="30" [navigation]="true" [pagination]="{ clickable: true }">
 
         <ng-template swiperSlide *ngFor="let service of servicesCards">
@@ -35,14 +36,15 @@
       </swiper>
     </div>
 
-
+    <!-- 
     <div id="service-vendors">
       <h3 class="title-principal">Principales proveedores</h3>
       <div id="cards-vendors">
         <div class="card-vendor" *ngFor="let vendor of providers">
-          <img src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/{{vendor.url}}" alt="{{vendor.title}}">
+          <img src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/{{vendor.url}}"
+            alt="{{vendor.title}}">
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
