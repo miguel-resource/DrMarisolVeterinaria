@@ -20,7 +20,18 @@
     </div>
 
     <div id="service-about">
-      <swiper [slidesPerView]="3" [spaceBetween]="10" [navigation]="false" [pagination]="{ clickable: true }">
+      <swiper [slidesPerView]="3" [spaceBetween]="10" [navigation]="false" [pagination]="{ clickable: true }"
+      [breakpoints]="{
+        '320': {
+          slidesPerView: 1
+        },
+        '480': {
+          slidesPerView: 2
+        },
+        '801' : {
+          slidesPerView: 3
+        }
+      }">
 
         <ng-template swiperSlide >
           <img src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/servicios%2FComponent%202.png?alt=media&token=c6cf99e5-4347-401d-b45c-24ce63736d32">
@@ -43,15 +54,15 @@
       </swiper>
     </div>
 
-    <!-- 
+    
     <div id="service-vendors">
-      <h3 class="title-principal">Principales proveedores</h3>
+      <h3 class="title-principal title">Principales proveedores</h3>
       <div id="cards-vendors">
         <div class="card-vendor" *ngFor="let vendor of providers">
           <img src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/{{vendor.url}}"
             alt="{{vendor.title}}">
         </div>
       </div>
-    </div> -->
+    </div> 
   </div>
 </div>

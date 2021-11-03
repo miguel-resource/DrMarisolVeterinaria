@@ -159,6 +159,29 @@ PROVEEDORES
     font-size: 15px;
   }
 
+  /*******
+   SERVICIOS 
+  *******/
+  swiper {
+    width: 220px;
+    height: 230px;
+  }
+
+  /*******
+   Proveedores 
+  *******/
+
+
+  #service-vendors #cards-vendors{
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    width: 90%;
+  }
+
+  #cards-vendors .card-vendor{
+    width: 120px;
+  }
+
 
 }
 
@@ -172,6 +195,24 @@ PROVEEDORES
   #text-about p  {
     font-size: 16px;
   }
+
+
+  /*******
+   SERVICIOS 
+  *******/
+  swiper {
+    width: 360px;
+    height: 200px;
+  }
+
+  /*******
+   Proveedores 
+  *******/
+
+  #service-vendors #cards-vendors{
+    grid-template-columns: repeat(3, 1fr);
+
+  }
 }
 
 @media (min-width:600px) {
@@ -181,6 +222,25 @@ PROVEEDORES
     width: 80%;
     margin: 0 auto;
   }
+
+
+
+  /*******
+   SERVICIOS 
+  *******/
+  swiper {
+    width: 430px;
+    height: 225px;
+  }
+
+
+  /*******
+   Proveedores 
+  *******/
+  #cards-vendors .card-vendor{
+    width: 145px;
+  }
+
 }
 
 @media (min-width:801px) {
@@ -193,7 +253,22 @@ PROVEEDORES
   #text-about p  {
     font-size: 22px;
   }
+
+  /*******
+   SERVICIOS 
+  *******/
+  swiper {
+    width: 645px;
+    height: 225px;
+  }
   
+  /*******
+   Proveedores 
+  *******/
+  #cards-vendors .card-vendor{
+    width: 175px;
+  }
+
 }
 
 @media (min-width:1025px) { 
@@ -211,8 +286,20 @@ PROVEEDORES
     text-align: center;
     width: 70%;
   }
-
+  /*******
+   SERVICIOS 
+  *******/
+  swiper {
+    width: 683px;
+    height: 230px;
+  }
   
+  /*******
+   Proveedores 
+  *******/
+  #cards-vendors .card-vendor{
+    width: 190px;
+  }
 
 }
 
@@ -223,5 +310,24 @@ PROVEEDORES
   
   #text-about p { 
     width: 60%;
+  }
+
+  /*******
+   SERVICIOS 
+  *******/
+  swiper {
+    width: 800px;
+    height: 260px;
+  }
+
+  /*******
+   Proveedores 
+  *******/
+  #service-vendors #cards-vendors{
+    grid-gap: 20px;
+  }
+  
+  #cards-vendors .card-vendor{
+    width: 220px;
   }
 }
