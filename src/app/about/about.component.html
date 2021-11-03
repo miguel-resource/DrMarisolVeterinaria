@@ -20,18 +20,25 @@
     </div>
 
     <div id="service-about">
-      <swiper [slidesPerView]="2" [spaceBetween]="30" [navigation]="true" [pagination]="{ clickable: true }">
+      <swiper [slidesPerView]="3" [spaceBetween]="10" [navigation]="false" [pagination]="{ clickable: true }">
 
-        <ng-template swiperSlide *ngFor="let service of servicesCards">
-          <mat-card class="card">
-            <mat-card-header>
-              <div class="mat-car-ido" mat-card-avatar><i class="fas fa-{{ service.icon }}"></i></div>
-              <mat-card-title>{{ service.name | uppercase }}</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
-              <p>{{ service.content }}</p>
-            </mat-card-content>
-          </mat-card>
+        <ng-template swiperSlide >
+          <img src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/servicios%2FComponent%202.png?alt=media&token=c6cf99e5-4347-401d-b45c-24ce63736d32">
+        </ng-template>
+        <ng-template swiperSlide >
+          <img src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/servicios%2FComponent%201.png?alt=media&token=3a5da725-9d8d-4b21-8a58-dd52735aeef6">
+        </ng-template>
+        <ng-template swiperSlide >
+          <img src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/servicios%2FComponent%203.png?alt=media&token=c2a09c01-d8a3-432a-bf68-95d435b65982">
+        </ng-template>
+        <ng-template swiperSlide >
+          <img src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/servicios%2FComponent%204.png?alt=media&token=bee1826f-2c6e-4a6f-9eaa-dd8c00aed582">
+        </ng-template>
+        <ng-template swiperSlide >
+          <img src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/servicios%2FComponent%205.png?alt=media&token=72751f6f-4c14-4e2f-b748-b09d42ee650b">
+        </ng-template>
+        <ng-template swiperSlide >
+          <img src="https://firebasestorage.googleapis.com/v0/b/drmarisolveterinaria.appspot.com/o/servicios%2FComponent%207.png?alt=media&token=6974728e-d40a-4dc9-987c-46df70a31741">
         </ng-template>
       </swiper>
     </div>
