@@ -6,9 +6,9 @@
   </div>
 
   <div class="form">
-    <label>Contenido <span>*</span></label>
+    <label>Contenido <span>*max. 200</span></label>
     <i class="fas fa-align-left"></i>
-    <textarea formControlName="contenido" placeholder="Contenido" required ></textarea>
+    <textarea formControlName="contenido" maxlength="200"  placeholder="Contenido" required ></textarea>
   </div>
 
   <div class="form">
@@ -29,6 +29,6 @@
 
   <button mat-raised-button color="primary" (click)="createSlider()"
   [disabled]="!formSlider.valid" *ngIf="!(idUpdateFirebase.length > 0)">Crear</button>
-  <button mat-raised-button color="primary" (click)="createSlider()"
+  <button mat-raised-button color="primary" (click)="updateSlider()"
   [disabled]="!formSlider.valid" *ngIf="idUpdateFirebase.length > 0">Actualizar</button>
 </form>

@@ -7,20 +7,18 @@
       SLIDER
     -->
     <div id="home-slider">
-      <swiper class="slider-principal" [slidesPerView]="1" [spaceBetween]="30" 
-        [pagination]="{ clickable: true }" [autoplay]="{
+      <swiper class="slider-principal" [slidesPerView]="1" [spaceBetween]="30" [pagination]="{ clickable: true }"
+        [autoplay]="{
           delay: 3500,
           disableOnInteraction: false
-        }"
-        [resizeObserver]="true"
-        >
+        }" [resizeObserver]="true">
         <ng-template class="swiper-slide" swiperSlide *ngFor="let slider of sliders">
           <div class="back" style="background-image:  url('{{ slider.background }}');">
             <div class="content-slider">
               <div class="title">{{ slider.titulo }}</div>
               <div class="content">{{ slider.contenido }}</div>
               <button *ngIf="slider.url.length > 0" class="btn btn-" mat-raised-button
-                routerLink="post/{{ slider.url }}">ENLACE <i class="fas fa-arrow-right"></i></button>
+                routerLink="/blog/{{ slider.url }}">ENLACE <i class="fas fa-arrow-right"></i></button>
             </div>
 
           </div>
@@ -28,9 +26,9 @@
       </swiper>
     </div>
 
-<!-- 
+    <!-- 
       Puntos de la página
---->
+    --->
     <div id="cards-intro">
       <div class="card" *ngFor="let card of cards">
         <mat-card>
@@ -52,7 +50,7 @@
 
 
 
-    
+
     <div id="introduction">
 
       <div class="tab-content">
@@ -61,7 +59,7 @@
           <p>
             En la <span>Veterinaria Dra. Marisol</span> ofrecemos un atención especializada para tu mascota,
             contamos con los mejores epecialistas y un servicio de principio a fin para que
-            cada uno de nuestros pequeños amigos regrese seguro a casa. 
+            cada uno de nuestros pequeños amigos regrese seguro a casa.
           </p>
           <img src="https://cdn.pixabay.com/photo/2020/03/26/10/35/domestic-cat-4969984_960_720.jpg"
             alt="atención veterinaria">
@@ -75,34 +73,28 @@
       </div>
 
 
+    </div>
 
-      <div class="tab-content">
-        <h3 class="title-principal title">Equipo de trabajo</h3>
-        <div id="cowork">
+    <div class="cowork-section">
+      <h3 class="title-principal title">Equipo de trabajo</h3>
+      <div id="cowork">
 
 
-          <swiper [slidesPerView]="2" [spaceBetween]="5" [centeredSlides]="true" [pagination]="{
-            clickable: true
-            }">
-            <ng-template swiperSlide class="colaborator"*ngFor="let item of collaborators">
-              <mat-card class="card">
-                <mat-card-header>
-                  <div mat-card-avatar><i class="fas fa-user-md"></i></div>
-                  <mat-card-title>{{ item.nombre }}</mat-card-title>
-                  <mat-card-subtitle>{{ item.ocupacion }}</mat-card-subtitle>
-                </mat-card-header>
-                <img src="{{ item.foto }}" alt="{{ item.nombre }}">
-                <mat-card-actions>
-                  <button mat-stroked-button (click)="openDialog(item)">
-                    <i class="fas fa-eye"></i>
-                  </button>
-                </mat-card-actions>
-              </mat-card>
-            </ng-template>
-          </swiper>
-
-          <div class="collaborators-responsive">
-            <mat-card class="card" *ngFor="let item of collaborators">
+        <swiper [slidesPerView]="2" [spaceBetween]="5" [centeredSlides]="true" [pagination]="{
+          clickable: true
+          }" [breakpoints]="{
+            '320': {
+              slidesPerView: 1
+            },
+            '801' : {
+              slidesPerView: 2
+            },
+            '1280' : {
+              slidesPerView: 3
+            }
+          }">
+          <ng-template swiperSlide class="colaborator" *ngFor="let item of collaborators">
+            <mat-card class="card">
               <mat-card-header>
                 <div mat-card-avatar><i class="fas fa-user-md"></i></div>
                 <mat-card-title>{{ item.nombre }}</mat-card-title>
@@ -115,13 +107,13 @@
                 </button>
               </mat-card-actions>
             </mat-card>
-          </div>
+          </ng-template>
+        </swiper>
 
-        </div>
+
+
       </div>
-
-    </div> 
-
+    </div>
 
   </div>
 </div>

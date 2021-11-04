@@ -55,7 +55,6 @@
   margin: 0 auto;
   text-align: center;
   font-size: 21px;
-  font-family: 'Roboto Mono', monospace;
   margin-top: 1em;
   color: #fff;
 }
@@ -203,9 +202,7 @@ mat-card-content span {
 
 
 #cowork .swiper {
-  height: 450px;
   padding: 10px;
-  width: 90%;
 }
 
 #cowork .card {
@@ -283,8 +280,9 @@ cowork .card button:hover{
   #home-slider .content { 
     font-size:11px;
     width: 90%;
-    font-weight: 600;
+    font-weight: bold;
     line-height: 16px;
+    font-family: 'Ubuntu', sans-serif;
   }
 
   #home-slider button { 
@@ -366,35 +364,32 @@ cowork .card button:hover{
   /***
     Colaboradores
   **/
-  #cowork .swiper { 
-    display: none;
-  }
-
-  .collaborators-responsive  {
-    width: 100%;
-  }
-
-  .collaborators-responsive .card {
-    margin: 0 auto;
-    margin-bottom: 30px;
-    width: 90% !important;
-    height: auto !important;
-  }
-
-  .collaborators-responsive .card .mat-card-avatar { 
-    width: 30px !important;
-    height: 30px;
-  }
-
   
 
+  #cowork .card {
+    margin: 0 auto;
+  }
 
+  .cowork-section .title {
+    width: 81%;
+    margin: 0 auto;
+  }
+
+  .cowork-section .swiper {
+    height: 460px;
+  }
+
+  .cowork-section .swiper .card {
+    width: 90% !important;
+  }
 }
+
+
 @media (min-width:480px) { 
   /***
     Slider
   **/
-  .swiper {
+  #home-slider .swiper {
     width: 30em !important;
     height: 290px;
   }
@@ -450,16 +445,17 @@ cowork .card button:hover{
     Colaboradores
   **/
 
-  .collaborators-responsive .card {
-    width: 75% !important;
+  .cowork-section .swiper {
+    height: 460px !important;
   }
+
 }
 
 @media (min-width:600px) {
   /***
     Slider
   **/
-  .swiper {
+  #home-slider .swiper {
     width: 37em !important;
     height: 300px;
   }
@@ -496,20 +492,13 @@ cowork .card button:hover{
     width: 50%;
   }
 
-  /***
-    Colaboradores
-  **/
-
-  .collaborators-responsive .card {
-    width: 60% !important;
-  }
 
 }
 @media (min-width:801px) {
     /***
     Slider
   **/
-  .swiper { 
+  #home-slider .swiper { 
     width: 48em !important;
     height: 350px
   }
@@ -526,6 +515,8 @@ cowork .card button:hover{
 
   #home-slider .content { 
     font-size: 15px;
+    width: 65%;
+    line-height: 29px;
   }
 
   #home-slider button { 
@@ -556,33 +547,26 @@ cowork .card button:hover{
   .tab-content iframe { 
     height: 300px;
   }
-
   /***
     Colaboradores
   **/
-
-  .collaborators-responsive { 
-    display: none;
+  .cowork-section .swiper  {
+    width: 42em !important;
   }
-
-  #cowork .swiper { 
-    display: block;
-    width: 100% !important;
-  }
-
-  #cowork .card { 
-    width: 96%;
-  }
-
 
 }
 @media (min-width:1025px) { 
     /***
     Slider
   **/
-  .swiper { 
+  #home-slider .swiper { 
     width: 52em !important;
     height: 380px
+  }
+
+  #home-slider .content {
+    width: 49%;
+    line-height: 27px;
   }
 
   #home-slider .back { 
@@ -642,35 +626,20 @@ cowork .card button:hover{
     text-align: left;
   }
 
-  /***
-    Colaboradores
-  **/
 
-  #cowork .card { 
-    width: 90%;
-  }
-
-  #cowork .card .mat-card-title {
-    font-size: 15px !important;
-  }
 
 }
 
 
 @media (min-width: 1175px) {
-  /***
-    Colaboradores
-  **/
-  #cowork .card { 
-    width: 75%;
-  }
+
 }
 
 @media (min-width:1280px) {
     /***
     Slider
   **/
-  .swiper { 
+  #home-slider .swiper { 
     width:  68em !important;
     height: 445px
   }
@@ -712,14 +681,12 @@ cowork .card button:hover{
     line-height: 41px;
     margin-top: 4%;
   }
-
   /***
     Colaboradores
   **/
-  #cowork .card { 
-    width: 65%;
+  .cowork-section .swiper  {
+    width: 60em !important;
   }
-
 }
 
 
