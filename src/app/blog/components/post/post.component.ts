@@ -23,7 +23,6 @@ export class PostComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
-      console.log(params.id);
       this.postBlogService.getPost(params.id).subscribe((data:any) => {
         this.nombre = data.data().nombre;
         this.tipo = data.data().tipo;
@@ -32,6 +31,7 @@ export class PostComponent implements OnInit {
         this.contenido = data.data().contenido;
       })
     })
+
   }
 
 }
