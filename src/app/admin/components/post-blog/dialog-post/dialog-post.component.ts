@@ -66,8 +66,6 @@ export class DialogPostComponent implements OnInit {
         fecha: Math.floor(Date.now() / 1000)
       })
     }
-
-
   }
 
   updatePost() {

@@ -79,8 +79,6 @@ export class DialogCollaboratorComponent implements OnInit {
     }).reverse(1);
     console.log(data.foto);
     this.imageFoto = data.foto;
-
-
   }
 
 }
